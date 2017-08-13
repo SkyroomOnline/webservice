@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skyroom Web Service Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.png">
+</head>
+<body>
+<div class="container">
+  <h1>Skyroom Web Service Demo <small>v{{version}}</small></h1>
+  <fieldset>
+    <legend>Functions</legend>
+    <form action="" method="post" target="iframe">
+      <div>
+        <label>API Key:</label>
+        {{base_url}} <input id="api_key" name="api_key" placeholder="your-api-key" value="mkh1234">
+      </div>
+      <div class="buttons">
+        <label>Room</label>
+        <button name="action" value="getRooms">getRooms()</button>
+        <button name="action" value="getRoom">getRoom()</button>
+      </div>
+    </form>
+  </fieldset>
+  <fieldset>
+    <legend>Result</legend>
+    <iframe name="iframe"></iframe>
+  </fieldset>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "webservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/skyroom/webservice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/skyroom/webservice/issues"
+  },
+  "homepage": "https://gitlab.com/skyroom/webservice#README",
+  "dependencies": {
+    "del": "^3.0.0",
+    "fs": "0.0.1-security",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-markdown": "^1.2.0",
+    "gulp-replace": "^0.6.1",
+    "marked": "^0.3.6",
+    "pump": "^1.0.2"
+  }
+}
