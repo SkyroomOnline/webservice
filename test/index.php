@@ -1,6 +1,6 @@
 <?php
 /**
- * Sample Implementation of Skyroom Web Service
+ * Sample Implementation of the Skyroom Web Service
  *
  * @version     1.0
  * @copyright   Skyroom.ir
@@ -28,14 +28,69 @@ $api = new Skyroom($url);
 $action = $_POST['action'];
 switch ($action) {
     case 'getRooms':
-        $params = array(
-            'customer_id' => 1,
-        );
+        $params = array();
         break;
 
     case 'getRoom':
         $params = array(
             'room_id' => 1,
+        );
+        break;
+
+    case 'createRoom':
+        $params = array(
+            'service_id' => 1,
+            'name' => time(),
+            'title' => 'Room ' . rand(1, 100),
+            'max_users' => rand(2, 50),
+        );
+        break;
+
+    case 'updateRoom':
+        $params = array(
+            'room_id' => 31,
+            'name' => time(),
+            'title' => 'Room ' . rand(1, 100),
+            'max_users' => rand(2, 50),
+        );
+        break;
+
+    case 'deleteRoom':
+        $params = array(
+            'room_id' => 36,
+        );
+        break;
+
+    case 'getUsers':
+        $params = array();
+        break;
+
+    case 'getUser':
+        $params = array(
+            'user_id' => 1,
+        );
+        break;
+
+    case 'createUser':
+        $params = array(
+            'username' => time(),
+            'nickname' => 'User ' . rand(1, 100),
+            'password' => rand(8, 10),
+        );
+        break;
+
+    case 'updateUser':
+        $params = array(
+            'user_id' => 31,
+            'name' => time(),
+            'title' => 'User ' . rand(1, 100),
+            'max_users' => rand(2, 50),
+        );
+        break;
+
+    case 'deleteUser':
+        $params = array(
+            'user_id' => 36,
         );
         break;
 

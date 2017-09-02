@@ -20,8 +20,8 @@ class HttpRequest
     /**
      * Prepares and sends the request to the server via HTTP POST
      *
-     * @param   array $data Request params
-     * @return  array Response array
+     * @param   array   $data Request params
+     * @return  array   Response array
      * @throws  HttpException
      * @throws  JsonException
      * @throws  NetworkException
@@ -36,25 +36,24 @@ class HttpRequest
             $queryString = rtrim($queryString, '&');
         }
 
+        // set request options
         $curl = curl_init($this->url);
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
+        curl_setopt($curl, CURLOPT_TIMEOUT, 30);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $queryString);
         curl_setopt($curl, CURLOPT_HTTPHEADER, array (
             'Accept: application/json',
             'Content-Type: application/x-www-form-urlencoded',
         ));
 
-        try {
-            $response = curl_exec($curl);
-            $errNo = curl_errno($curl);
-            if ($errNo !== 0) {
-                throw new NetworkException(curl_error($curl), $errNo);
-            }
-        } catch (\Exception $e) {
-            curl_close($curl);
-            return null;
+        // make the request
+        $response = curl_exec($curl);
+        $errNo = curl_errno($curl);
+        if ($errNo !== 0) {
+            throw new NetworkException(curl_error($curl), $errNo);
         }
 
         // check HTTP status code
