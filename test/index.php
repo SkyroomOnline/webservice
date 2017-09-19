@@ -27,11 +27,27 @@ $url = BASE_URL . $apiKey;
 $api = new Skyroom($url);
 $action = $_POST['action'];
 switch ($action) {
+    case 'getServices':
+        $params = array();
+        break;
+
+    case 'getService':
+        $params = array(
+            'service_id' => 1,
+        );
+        break;
+
     case 'getRooms':
         $params = array();
         break;
 
     case 'getRoom':
+        $params = array(
+            'room_id' => 1,
+        );
+        break;
+
+    case 'GetRoomUrl':
         $params = array(
             'room_id' => 1,
         );
@@ -67,15 +83,18 @@ switch ($action) {
 
     case 'getUser':
         $params = array(
-            'user_id' => 1,
+            'user_id' => 11888,
         );
         break;
 
     case 'createUser':
         $params = array(
             'username' => time(),
-            'nickname' => 'User ' . rand(1, 100),
+//            'nickname' => 'User ' . rand(1, 100),
             'password' => rand(8, 10),
+            'fname' => 'First name',
+            'lname' => 'Last name',
+            'is_public' => true,
         );
         break;
 
@@ -111,5 +130,5 @@ if (Skyroom\HttpError::IsError($result)) {
  */
 function output($data) {
     header('Content-Type: application/json');
-    print(json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+    print(json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
 }

@@ -6,12 +6,7 @@
  * @copyright   Skyroom.ir
  */
 
-interface SkyroomApi
-{
-    public function getRooms($serviceId);
-}
-
-class Skyroom implements SkyroomApi
+class Skyroom
 {
     const Version = '1.0';
     private $http;
@@ -28,26 +23,12 @@ class Skyroom implements SkyroomApi
         $this->http = new Skyroom\HttpRequest($url);
     }
 
-    public function call($action, $params = array()) {
-        $params['action'] = $action;
+    public function call($action, $options = array()) {
+        $options['action'] = $action;
         try {
-            return $this->http->post($params);
+            return $this->http->post($options);
         } catch (Exception $e) {
             return new Skyroom\HttpError($e->getMessage(), $e->getCode());
         }
-    }
-
-    public function getRooms($data) {
-        $data['action'] = 'getRooms';
-        return $this->call($data);
-    }
-
-    public function getRoom($roomId) {
-        $data = array(
-            'action' => 'getRoom',
-            'room_id' => $roomId
-        );
-
-        return $this->call($data);
     }
 }

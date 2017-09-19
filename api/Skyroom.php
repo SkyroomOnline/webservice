@@ -23,10 +23,13 @@ class Skyroom
         $this->http = new Skyroom\HttpRequest($url);
     }
 
-    public function call($action, $options = array()) {
-        $options['action'] = $action;
+    public function call($action, $params = array()) {
+        $data = [
+            'action' => $action,
+            'params' => json_encode($params),
+        ];
         try {
-            return $this->http->post($options);
+            return $this->http->post($data);
         } catch (Exception $e) {
             return new Skyroom\HttpError($e->getMessage(), $e->getCode());
         }
