@@ -2,6 +2,11 @@ body {
     font-family: Arial, serif;
     font-size: .8em;
 }
+th {
+  vertical-align: top;
+  text-align: right;
+  white-space: nowrap;
+}
 h1 {
     text-align: center;
     font-size: 1.5rem;

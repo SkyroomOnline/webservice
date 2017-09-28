@@ -4,152 +4,83 @@
   <meta charset="UTF-8">
   <title>Skyroom Web Service</title>
   <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAABuwAAAbsBOuzj4gAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQsSURBVFiF7ZZfaJV1GMc/39/7njYt2h/FMIUI08AgGWpDN2gXEkq7SMM1dGcwRuSV4UUYhSlaZFCWJhQomTOs1k1FokLa6c82lkopBJGL3Wyl4J+lU8/On/fpwnPO3h3Pjme5ruq5et/n932f5/M8v+f344X/uqlU4cJOq5hyg8WBmA5EHPT75fwca9LwvwpQ32G1Bi8j6g1c3vI1wcGIxxuxNbowKQD1+21e4NEuY64ZUyW6AuOSg40m7i0YxfhD0NrVqpN3BFDXYesQ2wwieaJLwCaM18eFgCGDZT1R9U0EINfSug5bZWJ7fnIAg2pgqzm2F4lV6WAPZiXPVQ5gxS4rM3itmNBgGgFVmW6Mp6mpO8DKCQMMV7MIMfN2YkEDsE/wOXBmnIjNEwHwAdIBc0s5kCYquqPaln1f8pE1ytgLlOc0xuMrdlnZ4fUaKQXAAThHokTgy+GXnhZ9hbEpT1M2NJ0HS4x3EyCZ5IQMK0F/NN9RMUSHjCtjnCkemBBAb5vOIr4pJpRxJZniYL7/8HqNmMbOg6CqVAA/+5CGVz1jnonZBXRxRPuJNp0rCAcD4fbJURleX/qhzXGO+Wnj/OwpnPqsSelbABxswHhHYoHBKuBuQRI4jsfWrjX6ZbwqDM5lHs4JPvV8DjXss8qkR7NBK2J+AEgwOMLp2j3W1Puszo8BADDHm8AZjJ3OGE47Ig4uFEsO4Iyvg4DuWVM5NnCDhSR5KeWzktDpCNkCfwrvAk2Z7mXadMA2Axvy1YLBSIqFsTbFxwOo3WP3eWU8A6xFPFwMNlcsLOqJqs8POXoLXQUGsxI+bzVssedjW5TK+ld3mjcQZ5m72eInCl3huSKMBHDDREXW56AWGAVIXOdY+VQuGkwrEGNtcg7zl+y3A57HZTNqBuOslph5m7PbL2N3vIqPZ/STvlLJByaezFQ2A0IzcOo5Jes6bC9iY6FIBjVy1ATZjMVvztMydt5fzhfhiV960HaT4lGJiIlrYwAAImneTvo8bfBQ8cIKm+C4YFfg6E8nUDg5gC8G0vCt4IwTP0DeH06sTfGUeAr4fQJ548D7vlETBGwzY50CfvIctWHRY/ttWjrJYRMtAWz1+vjtFgCA3hYNeNCIceQ2ia/JeM/3Wdwd1YsJUeUcx0wsN3DmRgcuU/0roUvOj20mDXlbkLXvo/oTaK7vsPpANAKLMKolrptxFjiqJIe62nU1+42luGr+aEEKbeMjnXaX4qzODazRi2QZ3eRYQ6fdkxhhIOcwLphYPruM/vNx5qVEz+gSzT1RHYECW/BPLdakYcFgziGmC04OjjAYiBXcnBVk7Mgmh3G24A7sOBDN85UbtGO8gOPXrqhOhBcnrQMAnrEDGMr3G1RK/NXdMjb5pAN816p+jEbBjzJMcFHwiW/Ud0X15WTm+t8mzf4GzryDpPkzwYUAAAAASUVORK5CYII=" rel="icon" type="image/x-icon">
-  <!--<link rel="stylesheet" href="github.css">-->
-  <!--<script src="highlight.js"></script>-->
-  <!--<script>hljs.initHighlightingOnLoad();</script>-->
+  <link rel="stylesheet" href="style.css">
 </head>
-<style>
-  @import url(http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
-  body {
-    direction: rtl;
-    font-family: 'Droid Arabic Naskh', arial, serif;
-    font-size: .8em;
-    line-height: 2.4;
-  }
-  h1, h2, h3, h4, h5 {
-    margin-bottom: 0;
-  }
-  h1, h2, h3, h4, h5 {
-    font-family: Arial, serif;
-  }
-  h1 {
-    font-size: 2em;
-    text-align: center;
-  }
-  h2 {
-    font-size: 1.4rem;
-    text-decoration: underline;
-  }
-  h3 {
-    font-size: 1.2rem;
-  }
-  h4 {
-    font-size: 1.1rem;
-  }
-  h5 {
-    font-size: 1rem;
-    margin: 0;
-  }
-  p {
-    margin-top: 0;
-    margin-bottom: 10px;
-    text-align: justify;
-  }
-  table {
-    direction: ltr;
-    min-width: 50%;
-    margin-top: 0;
-    margin-bottom: 10px;
-    border-collapse: collapse;
-    font-family: 'Droid Arabic Naskh', arial, serif;
-    font-size: .9em;
-  }
-  table th, table td {
-    direction: rtl;
-    border: 1px solid #cacaca;
-    padding: 0 5px;
-  }
-  code {
-    font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
-    font-size:.8rem;
-    color: #393939;
-    background-color: #f8f8f8;
-    line-height: 1.4em;
-  }
-  pre {
-    direction: ltr;
-    text-align: left;
-    overflow: auto;
-    margin-top: 0;
-    margin-bottom: 10px;
-    background-color: #f8f8f8;
-    border: 1px solid #cacaca;
-    border-radius: 3px;
-    padding: 0 6px;
-  }
-  pre > code {
-    font-size:.6rem;
-  }
-  *:not(pre) > code {
-    border: 1px solid #cacaca;
-    border-radius: 2px;
-    padding: 1px;
-  }
-  .content {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  .align-left {
-    text-align: left;
-  }
-</style>
 <body>
-<div class="content"><h1 id="-">راهنمای استفاده از وب‌سرویس اسکای‌روم (نسخه آزمایشی)</h1>
-<h2 id="-">آشنایی با وب‌سرویس اسکای‌روم</h2>
-<h3 id="-">معرفی</h3>
+<div class="content"><h1>راهنمای استفاده از وب‌سرویس اسکای‌روم (نسخه آزمایشی)</h1>
+<h2>آشنایی با وب‌سرویس اسکای‌روم</h2>
+<h3>معرفی</h3>
 <p>وب‌سرویس اسکای‌روم با هدف یک‍پارچه‌سازی و بکارگیری سرویس‌های اسکای‌روم در سایر سامانه‌ها و برنامه‌های نرم‌افزاری طراحی و پیاده‌سازی شده است. با بهره‌گیری از وب‌سرویس اسکای‌روم می توانید سرویس‌ها، اتاق‌های مجازی، کاربران و سایر امکانات فراهم شده را از درون سامانه یا اپلیکیشن خود و با فراخوانی دستورات وب‌سرویس (API) مدیریت نمایید. همچنین در صورت نیاز می توانید با استفاده از سرویس احراز هویت یکپارچه (SSO)، بدون نیاز به ایجاد کاربر و درخواست کدکاربری و گذرواژه به هنگام ورود به اتاق مجازی، کاربران خود را از طریق ‌وبسایت و پایگاه داده خود احراز هویت کنید.</p>
-<h3 id="-">مشخصات فنی</h3>
-<p>وب‌سرویس اسکای‌روم بر پایه REST طراحی و پیاده‌سازی گردیده است که در آن تلاش شده است تا ضمن الگوبرداری از استانداردهای رایج دنیا، سادگی در اولویت نخست باشد. از اینرو در وب‌سرویس اسکای‌روم تمامی درخواست(request)ها به شکل POST ارسال می گردند و تمامی پاسخ(response)ها نیز به فرمت JSON بازگردانده می شوند. همچنین به منظور تفکیک خطاهای شبکه و سرور از خطاهای برنامه، تمامی پاسخ‌ها از سوی وب‌سرویس، چه موفق چه ناموفق، با کد وضعیت 200 برگردانده می شود(200 = HTTP Status Code).</p>
-<h3 id="-">آدرس وب‌سرویس</h3>
+<h3>مشخصات فنی</h3>
+<p>وب‌سرویس اسکای‌روم بر پایه REST طراحی و پیاده‌سازی گردیده و در آن تلاش شده است تا ضمن الگوبرداری از استانداردهای رایج دنیا، سادگی در اولویت نخست باشد. از اینرو در وب‌سرویس اسکای‌روم تمامی درخواست(request)ها به شکل POST ارسال می گردند و تبادل داده‌ها به فرمت JSON می‌باشد. همچنین به منظور تفکیک خطاهای شبکه و سرور از خطاهای برنامه، تمامی پاسخ‌ها از سوی وب‌سرویس، چه موفق چه ناموفق، با کد وضعیت 200 برگردانده می شود (200 = HTTP Status Code).</p>
+<h3>آدرس وب‌سرویس</h3>
 <p>ساختار آدرس(URL) وب‌سرویس بدین‌گونه است:</p>
 <pre><code>https://www.your-website.ir/skyroom/api/{YOUR_API_KEY}
-</code></pre><p>که در آن <code>YOUR_API_KEY</code> یک رشته به طول ۲۸ حرف و کلید اختصاصی شما برای استفاده از وب‌سرویس می‌باشد. به این ترتیب این کلید همواره جزء ثابتی از آدرس وب‌سرویس برای تمامی درخواست‌های ارسالی خواهد بود.</p>
-<h3 id="-">ارسال درخواست</h3>
-<p>شکل کلی یک درخواست به صورت زیر است که در آن <code>action</code> تابعی است که قصد فراخوانی آن را داریم و وجود آن همواره ضروری خواهد بود. سایر پارامترهای تابع، در صورت نیاز و به هر تعداد، در ادامه اضافه می شود:</p>
-<pre><code class="lang-http">POST https://www.your-website.ir/skyroom/api/kcjsdhfisdofewr98eh498urwekj
+</code></pre><p>که در آن <code>YOUR_API_KEY</code> یک رشته به طول ۱۶ حرف و کلید اختصاصی شما برای استفاده از وب‌سرویس می‌باشد. به این ترتیب این کلید همواره جزء ثابتی از آدرس وب‌سرویس برای تمامی درخواست‌های ارسالی خواهد بود.</p>
+<h3>ارسال درخواست</h3>
+<p>شکل کلی یک درخواست به صورت زیر است:</p>
+<pre><code class="lang-http">POST https://www.your-website.ir/skyroom/api/api-key-462353
 {
   &quot;action&quot;: &quot;action-name&quot;,
-  &quot;param1&quot;: &quot;param1-value&quot;,
-  &quot;param2&quot;: &quot;param2-value&quot;,
-  &quot;param3&quot;: &quot;param3-value&quot;,
-  ...
+  &quot;params&quot;: {
+    &quot;param1&quot;: &quot;value1&quot;,
+    &quot;param2&quot;: &quot;value2&quot;,
+    &quot;param3&quot;: &quot;value3&quot;,
+    ...
+  }
 }
 </code></pre>
-<h3 id="-">دریافت پاسخ</h3>
-<p>پاسخ‌ دریافتی از وب‌سرویس بسته به نوع درخواست می‌تواند یکی از انواع عدد<code>number</code>، رشته<code>string</code>، آرایه<code>[]</code> یا آبجکت<code>{}</code> باشد. در ادامه چند نمونه از اشکال مختلف پاسخ آمده است:</p>
-<pre><code class="lang-json">12
+<p>در اینجا <code>action</code> تابعی است که قصد فراخوانی آن را داریم و <code>params</code> دربردارنده سایر پارامترهای تابع می‌باشد. توجه داشته باشید که نام تابع و پارامترهای ارسالی به کوچکی و بزرگی حروف حساسند.</p>
+<h3>دریافت پاسخ</h3>
+<p>فرم کلی تمامی پاسخ‌های دریافتی از وب‌سرویس به صورت زیر است:</p>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: &quot;action-result&quot;
+}
 </code></pre>
-<pre><code class="lang-json">&quot;https://www.skyroom.ir/ch/web-conference&quot;
-</code></pre>
-<pre><code class="lang-json">[
-  &quot;item1&quot;,
-  &quot;item2&quot;,
-  &quot;item3&quot;
-]
+<p>مقدار <code>ok</code> می‌تواند true یا false باشد که نشان‌دهنده موفق یا ناموفق بودن فراخوانی تابع است. چنانچه عملیات موفق باشد، نتیجه درون <code>result</code> قرار می‌گیرد. این مقدار بسته به نوع درخواست می‌تواند یکی از انواع عدد<code>number</code>، رشته<code>string</code>، آرایه<code>[]</code> یا آبجکت<code>{}</code> باشد. در ادامه چند نمونه از اشکال مختلف پاسخ آمده است:</p>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: 12
+}
 </code></pre>
 <pre><code class="lang-json">{
-  &quot;key1&quot;: &quot;value1&quot;,
-  &quot;key2&quot;: &quot;value2&quot;,
-  &quot;key3&quot;: [
+  &quot;ok&quot;: true,
+  &quot;result&quot;: &quot;https://www.skyroom.ir/ch/web-conference&quot;
+}
+</code></pre>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: [
     &quot;item1&quot;,
     &quot;item2&quot;,
     &quot;item3&quot;
   ]
 }
 </code></pre>
-<h3 id="-">مدیریت خطاها</h3>
-<p>همانطور که پیشتر اشاره شد، تمامی پاسخ‌های دریافتی از سمت وب‌سرویس اعم از موفق یا ناموفق با کد وضعیت 200 ارسال می‌گردد. در نتیجه چنانچه مقدار این کد عددی غیر از 200 باشد نشان دهنده بروز خطای شبکه یا سرور می‌باشد. اما در مورد خطاهای  برنامه‌ای، پاسخ به شکل زیر خواهد بود:</p>
-<pre><code class="lang-http">HTTP/1.1 200 OK
-{
-  &quot;error&quot;: {
-    &quot;code&quot;: 10,
-    &quot;message&quot;: &quot;The provided API key is invalid.&quot;,
-    &quot;data&quot;: &quot;Additional data of any type&quot;
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: {
+    &quot;key1&quot;: 32,
+    &quot;key2&quot;: &quot;value2&quot;,
+    &quot;key3&quot;: [
+      &quot;item1&quot;,
+      &quot;item2&quot;,
+      &quot;item3&quot;
+    ]
   }
 }
 </code></pre>
-<p>از این رو می‌بایست برای تشخیص بروز خطا وجود کلیدواژه <code>error</code> را بررسی کنید.</p>
+<h3>مدیریت خطاها</h3>
+<p>همانطور که پیشتر اشاره شد، تمامی پاسخ‌های دریافتی از سمت وب‌سرویس اعم از موفق یا ناموفق با کد وضعیت 200 ارسال می‌گردد. در نتیجه چنانچه مقدار این کد (با استفاده از خواندن HTTP Header) عددی غیر از 200 باشد نشان دهنده بروز خطای شبکه یا سرور بوده و لازم است تا به گونه‌ای مدیریت شود. اما در مورد خطاهای  برنامه‌ای، پاسخ همواره به شکل زیر خواهد بود:</p>
+<pre><code class="lang-http">HTTP/1.1 200 OK
+{
+  &quot;ok&quot;: false,
+  &quot;error_code&quot;: 13,
+  &quot;error_message&quot;: &quot;درخواست شما با خطا روبرو شد.&quot;
+}
+</code></pre>
+<p>بدین ترتیب چنانچه عملیات ناموفق باشد دو مقدار <code>error_code</code> و <code>error_message</code> برگردانده می‌شود که به ترتیب بیانگر کد خطا و توضیح خطا می‌باشند.</p>
 <p>کد خطاهای عمومی به قرار زیر است:</p>
 <table>
 <thead>
@@ -175,11 +106,15 @@
 <td style="text-align:center">13</td>
 <td style="text-align:right">درخواست شما با خطا روبرو شد.</td>
 </tr>
+<tr>
+<td style="text-align:center">14</td>
+<td style="text-align:right">داده‌ مورد نظر وجود ندارد.</td>
+</tr>
 </tbody>
 </table>
-<h2 id="-">امکانات مدیریتی</h2>
+<h2>امکانات مدیریتی</h2>
 <p>امکانات مدیریتی ارایه شده در وب‌سرویس اسکای‌روم شامل سه بخش مدیریت سرویس‌ها، مدیریت اتاق‌ها و مدیریت کاربران می شود.</p>
-<h3 id="-">۱. مدیریت سرویس‌ها</h3>
+<h3>۱. مدیریت سرویس‌ها</h3>
 <p>(در دست پیاده سازی..)</p>
 <!---
 هدف از سرویس‌ها در اسکای‌روم دسته‌بندی کردن اتاق‌های مجازی و همچنین اعمال برخی محدودیت‌ها همچون تعداد کاربر همزمان، حجم نفرساعت مصرفی، فضای دیسک، میزان آپلود و یا تعیین بازه زمانی برای بهره‌برداری از سرویس می‌باشد. برای ساخت اتاق‌های مجازی، وجود حداقل یک سرویس الزامی است.
@@ -310,9 +245,9 @@ true
 true
 ```
 --->
-<h3 id="-">۲. مدیریت اتاق‌ها</h3>
+<h3>۲. مدیریت اتاق‌ها</h3>
 <p>با استفاده از اتاق‌های مجازی می‌توان رویدادهای مختلف را به صورت همزمان و کاملا مجزا از یکدیگر برگزار نمود. هر اتاق دارای یک نام واحد می‌باشد که آدرس(URL) اتاق نیز با همین نام ساخته می‌شود و در نتیجه بهتر است این نام به صورت لاتین وارد شود. می توان برای اتاق‌ها برخی محدودیت‌ها همچون سقف کاربر آنلاین، میزان نفرساعت مصرفی و جلوگیری از ورود کاربران پیش از ورود اپراتور را بکار برد.</p>
-<h4 id="-">مشخصات اتاق</h4>
+<h4>مشخصات اتاق</h4>
 <table>
 <thead>
 <tr>
@@ -365,7 +300,7 @@ true
 <tr>
 <td style="text-align:left">session_duration</td>
 <td style="text-align:left">number</td>
-<td style="text-align:right">طول جلسه</td>
+<td style="text-align:right">محدودیت طول نشست</td>
 </tr>
 <tr>
 <td style="text-align:left">time_limit</td>
@@ -394,7 +329,7 @@ true
 </tr>
 </tbody>
 </table>
-<h4 id="-">توابع اتاق</h4>
+<h4>توابع اتاق</h4>
 <table>
 <thead>
 <tr>
@@ -412,13 +347,19 @@ true
 <td>[]</td>
 </tr>
 <tr>
+<td style="text-align:left"><code>countRooms</code></td>
+<td style="text-align:right">دریافت لیست اتاق‌های موجود</td>
+<td style="text-align:right">لیست اتاق‌ها</td>
+<td>number</td>
+</tr>
+<tr>
 <td style="text-align:left"><code>getRoom</code></td>
 <td style="text-align:right">دریافت مشخصات یک اتاق</td>
 <td style="text-align:right">مشخصات اتاق</td>
 <td>{}</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>getRoomURL</code></td>
+<td style="text-align:left"><code>getRoomUrl</code></td>
 <td style="text-align:right">دریافت آدرس یک اتاق</td>
 <td style="text-align:right">آدرس اتاق</td>
 <td>string</td>
@@ -432,112 +373,262 @@ true
 <tr>
 <td style="text-align:left"><code>updateRoom</code></td>
 <td style="text-align:right">بروزرسانی اتاق</td>
-<td style="text-align:right">true یا false</td>
-<td>bool</td>
+<td style="text-align:right">1</td>
+<td>number</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>deleteRoom</code></td>
 <td style="text-align:right">حذف اتاق</td>
-<td style="text-align:right">true یا false</td>
-<td>bool</td>
+<td style="text-align:right">1</td>
+<td>number</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>getRoomUsers</code></td>
+<td style="text-align:right">دریافت لیست کاربران دارای دسترسی به اتاق</td>
+<td style="text-align:right">لیست کاربران</td>
+<td>[]</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>addRoomUsers</code></td>
+<td style="text-align:right">افزودن دسترسی کاربران به اتاق</td>
+<td style="text-align:right">تعداد کاربران افزوده شده</td>
+<td>number</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>removeRoomUsers</code></td>
+<td style="text-align:right">حذف دسترسی کاربران از اتاق</td>
+<td style="text-align:right">تعداد کاربران حذف شده</td>
+<td>number</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>updateRoomUser</code></td>
+<td style="text-align:right">تغییر دسترسی کاربر به اتاق</td>
+<td style="text-align:right">1</td>
+<td>number</td>
 </tr>
 </tbody>
 </table>
-<h4 id="-">دریافت لیست اتاق‌های موجود</h4>
-<h5 id="-">درخواست:</h5>
+<h4>دریافت لیست اتاق‌های موجود</h4>
+<h5>درخواست:</h5>
 <pre><code class="lang-json">{
   &quot;action&quot;: &quot;getRooms&quot;
 }
 </code></pre>
-<h5 id="-">پاسخ:</h5>
-<pre><code class="lang-json">[
-  {
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: [
+    {
+      &quot;id&quot;: 1,
+      &quot;name&quot;: &quot;meeting&quot;,
+      &quot;title&quot;: &quot;اتاق جلسات&quot;,
+      &quot;status&quot;: 1
+    },
+    {
+      &quot;id&quot;: 2,
+      &quot;name&quot;: &quot;learning-php&quot;,
+      &quot;title&quot;: &quot;کلاس آموزش PHP&quot;,
+      &quot;status&quot;: 0
+    }
+  ]
+}
+</code></pre>
+<h4>دریافت تعداد اتاق‌های موجود</h4>
+<h5>درخواست:</h5>
+<pre><code class="lang-json">{
+  &quot;action&quot;: &quot;countRooms&quot;
+}
+</code></pre>
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: 2
+}
+</code></pre>
+<h4>دریافت مشخصات یک اتاق</h4>
+<h5>درخواست:</h5>
+<pre><code class="lang-json">{
+  &quot;action&quot;: &quot;getRoom&quot;,
+  &quot;params&quot;: {
+    &quot;room_id&quot;: 1
+  }
+}
+</code></pre>
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: {
     &quot;id&quot;: 1,
     &quot;name&quot;: &quot;meeting&quot;,
     &quot;title&quot;: &quot;اتاق جلسات&quot;,
-    &quot;status&quot;: 1
-  },
-  {
-    &quot;id&quot;: 2,
-    &quot;name&quot;: &quot;learning-php&quot;,
-    &quot;title&quot;: &quot;کلاس آموزش PHP&quot;,
-    &quot;status&quot;: 0
+    &quot;description&quot;: null,
+    &quot;status&quot;: 1,
+    &quot;guest_login&quot;: false,
+    &quot;op_login_first&quot;: true,
+    &quot;max_users&quot;: 8,
+    &quot;session_duration&quot;: null,
+    &quot;time_limit&quot;: null,
+    &quot;time_usage&quot;: 184486,
+    &quot;time_total&quot;: 3144460,
+    &quot;create_time&quot;: 1479021434,
+    &quot;update_time&quot;: 1501559112
   }
-]
-</code></pre>
-<h4 id="-">دریافت مشخصات یک اتاق</h4>
-<h5 id="-">درخواست:</h5>
-<pre><code class="lang-json">{
-  &quot;action&quot;: &quot;getRoom&quot;,
-  &quot;room_id&quot;: 1
 }
 </code></pre>
-<h5 id="-">پاسخ:</h5>
+<h4>دریافت آدرس یک اتاق</h4>
+<h5>درخواست:</h5>
 <pre><code class="lang-json">{
-  &quot;id&quot;: 1,
-  &quot;name&quot;: &quot;meeting&quot;,
-  &quot;title&quot;: &quot;اتاق جلسات&quot;,
-  &quot;description&quot;: null,
-  &quot;status&quot;: 1,
-  &quot;guest_login&quot;: false,
-  &quot;op_login_first&quot;: true,
-  &quot;max_users&quot;: 8,
-  &quot;session_duration&quot;: null,
-  &quot;time_limit&quot;: null,
-  &quot;time_usage&quot;: 184486,
-  &quot;time_total&quot;: 3144460,
-  &quot;create_time&quot;: 1479021434,
-  &quot;update_time&quot;: 1501559112
+  &quot;action&quot;: &quot;getRoomUrl&quot;,
+  &quot;params&quot;: {
+    &quot;room_id&quot;: 1
+  }
 }
 </code></pre>
-<h4 id="-">دریافت آدرس یک اتاق</h4>
-<h5 id="-">درخواست:</h5>
+<h5>پاسخ:</h5>
 <pre><code class="lang-json">{
-  &quot;action&quot;: &quot;getRoomURL&quot;,
-  &quot;room_id&quot;: 1
+  &quot;ok&quot;: true,
+  &quot;result&quot;: &quot;https://www.skyroom.ir/ch/faramooz/meeting&quot;
 }
 </code></pre>
-<h5 id="-">پاسخ:</h5>
-<pre><code class="lang-json">&quot;https://www.skyroom.ir/ch/faramooz/meeting&quot;
-</code></pre>
-<h4 id="-">ایجاد اتاق جدید</h4>
-<h5 id="-">درخواست:</h5>
+<h4>ایجاد اتاق جدید</h4>
+<h5>درخواست:</h5>
 <pre><code class="lang-json">{
   &quot;action&quot;: &quot;createRoom&quot;,
-  &quot;name&quot;: &quot;math-exercise&quot;,
-  &quot;title&quot;: &quot;کلاس حل تمرین ریاضی&quot;,
-  &quot;guest_login&quot;: false,
-  &quot;op_login_first&quot;: true,
-  &quot;max_users&quot;: 10
+  &quot;params&quot;: {
+    &quot;name&quot;: &quot;math-exercise&quot;,
+    &quot;title&quot;: &quot;کلاس حل تمرین ریاضی&quot;,
+    &quot;guest_login&quot;: false,
+    &quot;op_login_first&quot;: true,
+    &quot;max_users&quot;: 10
+  }
 }
 </code></pre>
-<h5 id="-">پاسخ:</h5>
-<pre><code class="lang-json">3
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: 3
+}
 </code></pre>
-<h4 id="-">بروزرسانی اتاق</h4>
-<h5 id="-">درخواست:</h5>
+<h4>بروزرسانی اتاق</h4>
+<h5>درخواست:</h5>
 <pre><code class="lang-json">{
   &quot;action&quot;: &quot;updateRoom&quot;,
-  &quot;id&quot;: 3,
-  &quot;max_users&quot;: 20
+  &quot;params&quot;: {
+    &quot;room_id&quot;: 3,
+    &quot;max_users&quot;: 20
+  }
 }
 </code></pre>
-<h5 id="-">پاسخ:</h5>
-<pre><code class="lang-json">true
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: 1
+}
 </code></pre>
-<h4 id="-">حذف اتاق</h4>
-<h5 id="-">درخواست:</h5>
+<h4>حذف اتاق</h4>
+<h5>درخواست:</h5>
 <pre><code class="lang-json">{
   &quot;action&quot;: &quot;deleteRoom&quot;,
-  &quot;id&quot;: 3
+  &quot;params&quot;: {
+    &quot;room_id&quot;: 3
+  }
 }
 </code></pre>
-<h5 id="-">پاسخ:</h5>
-<pre><code class="lang-json">true
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+    &quot;ok&quot;: true,
+    &quot;result&quot;: 1
+}
 </code></pre>
-<h3 id="-">۳. مدیریت کاربران</h3>
-<p>برای ورود به اتاق‌های مجازی و شرکت در رویدادها نیاز به ساخت حساب کاربری خواهد بود. استفاده از سرویس SSO از این قاعده مستثنی هست. برای ساخت یک حساب کاربری، وارد کردن نام کاربری، گذرواژه و نام نمایشی الزامی است. با هر حساب کاربری تنها یک بار می‌توان وارد اتاق شد. اگر بخواهیم چند نفر به صورت همزمان از یک حساب کاربری استفاده کنند در این صورت می‌بایست یک حساب کاربری از نوع عمومی ایجاد کنید. پس از ساخت حساب کاربری نیاز است تا دسترسی کاربر به اتاق یا اتاق‌های مربوطه ایجاد شود.</p>
-<h4 id="-">مشخصات کاربر</h4>
+<h4>دریافت لیست کاربران دارای دسترسی به یک اتاق</h4>
+<h5>درخواست:</h5>
+<pre><code class="lang-json">{
+  &quot;action&quot;: &quot;getRoomUsers&quot;,
+  &quot;params&quot;: {
+    &quot;room_id&quot;: 2
+  }
+}
+</code></pre>
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: [
+    {
+      &quot;user_id&quot;: 6344,
+      &quot;username&quot;: &quot;operator&quot;,
+      &quot;nickname&quot;: &quot;اپراتور&quot;,
+      &quot;access&quot;: 3
+    },
+    {
+      &quot;user_id&quot;: 6345,
+      &quot;username&quot;: &quot;presenter&quot;,
+      &quot;nickname&quot;: &quot;ارایه کننده&quot;,
+      &quot;access&quot;: 2
+    },
+    {
+      &quot;user_id&quot;: 6347,
+      &quot;username&quot;: &quot;user-150&quot;,
+      &quot;nickname&quot;: &quot;کاربر عادی&quot;,
+      &quot;access&quot;: 1
+    }
+  ]
+}
+</code></pre>
+<h4>افزودن دسترسی کاربران به یک اتاق</h4>
+<h5>درخواست:</h5>
+<pre><code class="lang-json">{
+  &quot;action&quot;: &quot;addRoomUsers&quot;,
+  &quot;params&quot;: {
+    &quot;room_id&quot;: 1175,
+    &quot;users&quot;: [
+        { &quot;user_id&quot;: 6344 },
+        { &quot;user_id&quot;: 6345, &quot;access&quot;: 2 }
+    ]
+  }
+}
+</code></pre>
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: 2
+}
+</code></pre>
+<h4>حذف دسترسی کاربران از یک اتاق</h4>
+<h5>درخواست:</h5>
+<pre><code class="lang-json">{
+  &quot;action&quot;: &quot;removeRoomUsers&quot;,
+  &quot;params&quot;: {
+    &quot;room_id&quot;: 1175,
+    &quot;users&quot;: [ 6344, 6345 ]
+  }
+}
+</code></pre>
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: 2
+}
+</code></pre>
+<h4>تغییر دسترسی کاربر به یک اتاق</h4>
+<h5>درخواست:</h5>
+<pre><code class="lang-json">{
+  &quot;action&quot;: &quot;updateRoomUser&quot;,
+  &quot;params&quot;: {
+    &quot;room_id&quot;: 1175,
+    &quot;user_id&quot;: 6344,
+    &quot;access&quot;: 3
+  }
+}
+</code></pre>
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: 1
+}
+</code></pre>
+<h3>۳. مدیریت کاربران</h3>
+<p>برای ورود به اتاق‌های مجازی و شرکت در رویدادها نیاز به ساخت حساب کاربری خواهد بود. برای ساخت یک حساب کاربری، وارد کردن نام کاربری، گذرواژه و نام نمایشی الزامی است. با هر حساب کاربری تنها یک بار می‌توان وارد اتاق شد. اگر بخواهیم چند نفر به صورت همزمان از یک حساب کاربری استفاده کنند در این صورت می‌بایست یک حساب کاربری از نوع عمومی ایجاد کنید. پس از ساخت حساب کاربری نیاز است تا دسترسی کاربر به اتاق یا اتاق‌های مربوطه ایجاد شود.</p>
+<h4>مشخصات کاربر</h4>
 <table>
 <thead>
 <tr>
@@ -558,6 +649,11 @@ true
 <td style="text-align:right">نام کاربری به لاتین و به طول حداکثر ۳۲ حرف</td>
 </tr>
 <tr>
+<td style="text-align:left">nickname</td>
+<td style="text-align:left">string</td>
+<td style="text-align:right">نام نمایشی به طول حداکثر ۱۲۸ حرف</td>
+</tr>
+<tr>
 <td style="text-align:left">password</td>
 <td style="text-align:left">string</td>
 <td style="text-align:right">گذرواژه به طول حداکثر ۱۲۸ حرف</td>
@@ -566,11 +662,6 @@ true
 <td style="text-align:left">email</td>
 <td style="text-align:left">string</td>
 <td style="text-align:right">آدرس ایمیل به طول حداکثر ۱۲۸ حرف</td>
-</tr>
-<tr>
-<td style="text-align:left">nickname</td>
-<td style="text-align:left">string</td>
-<td style="text-align:right">نام نمایشی به طول حداکثر ۱۲۸ حرف</td>
 </tr>
 <tr>
 <td style="text-align:left">fname</td>
@@ -583,14 +674,14 @@ true
 <td style="text-align:right">نام خانوادگی به طول حداکثر ۱۲۸ حرف</td>
 </tr>
 <tr>
+<td style="text-align:left">gender</td>
+<td style="text-align:left">number</td>
+<td style="text-align:right">جنسیت (0: نامشخص - 1: مرد - 2: زن)</td>
+</tr>
+<tr>
 <td style="text-align:left">status</td>
 <td style="text-align:left">number</td>
 <td style="text-align:right">وضعیت کاربر (0: غیرفعال - 1: فعال)</td>
-</tr>
-<tr>
-<td style="text-align:left">expiry_date</td>
-<td style="text-align:left">Unix time</td>
-<td style="text-align:right">تاریخ انقضا</td>
 </tr>
 <tr>
 <td style="text-align:left">is_public</td>
@@ -613,6 +704,11 @@ true
 <td style="text-align:right">مجموع زمان مصرف شده (ساعت)</td>
 </tr>
 <tr>
+<td style="text-align:left">expiry_date</td>
+<td style="text-align:left">Unix time</td>
+<td style="text-align:right">تاریخ انقضا</td>
+</tr>
+<tr>
 <td style="text-align:left">create_time</td>
 <td style="text-align:left">Unix time</td>
 <td style="text-align:right">زمان ایجاد کاربر</td>
@@ -624,7 +720,7 @@ true
 </tr>
 </tbody>
 </table>
-<h4 id="-">توابع کاربر</h4>
+<h4>توابع کاربر</h4>
 <table>
 <thead>
 <tr>
@@ -640,6 +736,12 @@ true
 <td style="text-align:right">دریافت لیست کاربران موجود</td>
 <td style="text-align:right">لیست کاربران</td>
 <td>[]</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>countUsers</code></td>
+<td style="text-align:right">دریافت تعداد کاربران موجود</td>
+<td style="text-align:right">تعداد کاربران</td>
+<td>number</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>getUser</code></td>
@@ -666,122 +768,216 @@ true
 <td>bool</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>addUserToRoom</code></td>
-<td style="text-align:right">افزودن کاربر به اتاق</td>
-<td style="text-align:right">true یا false</td>
-<td>bool</td>
+<td style="text-align:left"><code>getUserRooms</code></td>
+<td style="text-align:right">دریافت لیست اتاق‌های کاربر</td>
+<td style="text-align:right">لیست اتاق‌ها</td>
+<td>[]</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>removeUserFromRoom</code></td>
-<td style="text-align:right">حذف کاربر از اتاق</td>
-<td style="text-align:right">true یا false</td>
-<td>bool</td>
+<td style="text-align:left"><code>addUserRooms</code></td>
+<td style="text-align:right">افزودن به اتاق‌های کاربر</td>
+<td style="text-align:right">1</td>
+<td>number</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>removeUserRooms</code></td>
+<td style="text-align:right">حذف از اتاق‌های کاربر</td>
+<td style="text-align:right">1</td>
+<td>number</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>getLoginUrl</code></td>
+<td style="text-align:right">دریافت آدرس ورود مستقیم به اتاق بدون نیاز به لاگین</td>
+<td style="text-align:right">آدرس (URL)</td>
+<td>string</td>
 </tr>
 </tbody>
 </table>
-<h4 id="-">دریافت لیست کاربران موجود</h4>
-<h5 id="-">درخواست:</h5>
+<h4>دریافت لیست کاربران موجود</h4>
+<h5>درخواست:</h5>
 <pre><code class="lang-json">{
   &quot;action&quot;: &quot;getUsers&quot;
 }
 </code></pre>
-<h5 id="-">پاسخ:</h5>
-<pre><code class="lang-json">[
-  {
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: [
+    {
+      &quot;id&quot;: 1,
+      &quot;username&quot;: &quot;parham&quot;,
+      &quot;nickname&quot;: &quot;پرهام&quot;,
+      &quot;status&quot;: 1
+    },
+    {
+      &quot;id&quot;: 3,
+      &quot;username&quot;: &quot;sepideh&quot;,
+      &quot;nickname&quot;: &quot;سپیده&quot;,
+      &quot;status&quot;: 1
+    }
+  ]
+}
+</code></pre>
+<h4>دریافت مشخصات یک کاربر</h4>
+<h5>درخواست:</h5>
+<pre><code class="lang-json">{
+  &quot;action&quot;: &quot;getUser&quot;,
+  &quot;params&quot;: {
+    &quot;user_id&quot;: 1
+  }
+}
+</code></pre>
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: {
     &quot;id&quot;: 1,
     &quot;username&quot;: &quot;parham&quot;,
     &quot;nickname&quot;: &quot;پرهام&quot;,
-    &quot;status&quot;: 1
-  },
-  {
-    &quot;id&quot;: 3,
-    &quot;username&quot;: &quot;sepideh&quot;,
-    &quot;nickname&quot;: &quot;سپیده&quot;,
-    &quot;status&quot;: 1
+    &quot;email&quot;: &quot;example@gmail.com&quot;,
+    &quot;fname&quot;: &quot;پرهام&quot;,
+    &quot;lname&quot;: &quot;عابدینی&quot;,
+    &quot;gender&quot;: 1,
+    &quot;status&quot;: 1,
+    &quot;is_public&quot;: false,
+    &quot;time_limit&quot;: null,
+    &quot;time_usage&quot;: 426466,
+    &quot;time_total&quot;: 8464516,
+    &quot;expiry_date&quot;: null,
+    &quot;create_time&quot;: 1489021434,
+    &quot;update_time&quot;: 1489021434
   }
-]
-</code></pre>
-<h4 id="-">دریافت مشخصات یک کاربر</h4>
-<h5 id="-">درخواست:</h5>
-<pre><code class="lang-json">{
-  &quot;action&quot;: &quot;getUser&quot;,
-  &quot;user_id&quot;: 1
 }
 </code></pre>
-<h5 id="-">پاسخ:</h5>
-<pre><code class="lang-json">{
-  &quot;id&quot;: 1,
-  &quot;username&quot;: &quot;parham&quot;,
-  &quot;email&quot;: &quot;p.abedini3342@gmail.com&quot;,
-  &quot;nickname&quot;: &quot;پرهام&quot;,
-  &quot;fname&quot;: &quot;پرهام&quot;,
-  &quot;lname&quot;: &quot;عابدینی&quot;,
-  &quot;status&quot;: 1,
-  &quot;is_public&quot;: false,
-  &quot;expiry_date&quot;: null,
-  &quot;time_limit&quot;: null,
-  &quot;time_usage&quot;: 426466,
-  &quot;time_total&quot;: 8464516,
-  &quot;create_time&quot;: 1489021434,
-  &quot;update_time&quot;: 1489021434
-}
-</code></pre>
-<h4 id="-">ایجاد کاربر جدید</h4>
-<h5 id="-">درخواست:</h5>
+<h4>ایجاد کاربر جدید</h4>
+<h5>درخواست:</h5>
 <pre><code class="lang-json">{
   &quot;action&quot;: &quot;createUser&quot;,
-  &quot;username&quot;: &quot;test-user&quot;,
-  &quot;password&quot;: &quot;tu-2017!&quot;,
-  &quot;nickname&quot;: &quot;کاربر عمومی&quot;,
-  &quot;status&quot;: 1,
-  &quot;is_public&quot;: true
+  &quot;params&quot;: {
+    &quot;username&quot;: &quot;test-user&quot;,
+    &quot;password&quot;: &quot;12345&quot;,
+    &quot;nickname&quot;: &quot;کاربر عمومی&quot;,
+    &quot;status&quot;: 1,
+    &quot;is_public&quot;: true
+  }
 }
 </code></pre>
-<h5 id="-">پاسخ:</h5>
-<pre><code class="lang-json">4
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: 4
+}
 </code></pre>
-<h4 id="-">بروزرسانی کاربر</h4>
-<h5 id="-">درخواست:</h5>
+<h4>بروزرسانی کاربر</h4>
+<h5>درخواست:</h5>
 <pre><code class="lang-json">{
   &quot;action&quot;: &quot;updateUser&quot;,
-  &quot;id&quot;: 4,
-  &quot;status&quot;: 0
+  &quot;params&quot;: {
+    &quot;user_id&quot;: 4,
+    &quot;password&quot;: &quot;tu-2017!&quot;
+  }
 }
 </code></pre>
-<h5 id="-">پاسخ:</h5>
-<pre><code class="lang-json">true
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: 1
+}
 </code></pre>
-<h4 id="-">حذف کاربر</h4>
-<h5 id="-">درخواست:</h5>
+<h4>حذف کاربر</h4>
+<h5>درخواست:</h5>
 <pre><code class="lang-json">{
   &quot;action&quot;: &quot;deleteUser&quot;,
-  &quot;id&quot;: 4
+  &quot;params&quot;: {
+    &quot;user_id&quot;: 3
+  }
 }
 </code></pre>
-<h5 id="-">پاسخ:</h5>
-<pre><code class="lang-json">true
-</code></pre>
-<h4 id="-">افزودن کاربر به اتاق</h4>
-<h5 id="-">درخواست:</h5>
+<h5>پاسخ:</h5>
 <pre><code class="lang-json">{
-  &quot;action&quot;: &quot;addUserToRoom&quot;,
-  &quot;user_id&quot;: 4,
-  &quot;room_id&quot;: 3
+  &quot;ok&quot;: true,
+  &quot;result&quot;: 1
 }
 </code></pre>
-<h5 id="-">پاسخ:</h5>
-<pre><code class="lang-json">true
-</code></pre>
-<h4 id="-">حذف کاربر از اتاق</h4>
-<h5 id="-">درخواست:</h5>
+<h4>دریافت لیست اتاق‌های یک کاربر</h4>
+<h5>درخواست:</h5>
 <pre><code class="lang-json">{
-  &quot;action&quot;: &quot;removeUserFromRoom&quot;,
-  &quot;user_id&quot;: 4,
-  &quot;room_id&quot;: 3
+  &quot;action&quot;: &quot;getUserRooms&quot;,
+  &quot;params&quot;: {
+    &quot;user_id&quot;: 4
+  }
 }
 </code></pre>
-<h5 id="-">پاسخ:</h5>
-<pre><code class="lang-json">true
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: [
+    {
+      &quot;room_id&quot;: 1,
+      &quot;name&quot;: &quot;meeting&quot;,
+      &quot;title&quot;: &quot;اتاق جلسات&quot;,
+      &quot;access&quot;: 1
+    },
+    {
+      &quot;room_id&quot;: 2,
+      &quot;name&quot;: &quot;learning-php&quot;,
+      &quot;title&quot;: &quot;کلاس آموزش PHP&quot;,
+      &quot;access&quot;: 2
+    }
+  ]
+}
+</code></pre>
+<h4>افزودن به اتاق‌های یک کاربر</h4>
+<h5>درخواست:</h5>
+<pre><code class="lang-json">{
+  &quot;action&quot;: &quot;addUserRooms&quot;,
+  &quot;params&quot;: {
+    &quot;user_id&quot;: 6344,
+    &quot;users&quot;: [
+        { &quot;room_id&quot;: 1 },
+        { &quot;room_id&quot;: 2, &quot;access&quot;: 2 }
+    ]
+  }
+}
+</code></pre>
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: 2
+}
+</code></pre>
+<h4>حذف از اتاق‌های یک کاربر</h4>
+<h5>درخواست:</h5>
+<pre><code class="lang-json">{
+  &quot;action&quot;: &quot;removeUserRooms&quot;,
+  &quot;params&quot;: {
+    &quot;user_id&quot;: 6344,
+    &quot;rooms&quot;: [ 1, 2 ]
+  }
+}
+</code></pre>
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: 2
+}
+</code></pre>
+<h4>دریافت آدرس ورود مستقیم به اتاق بدون نیاز به لاگین</h4>
+<h5>درخواست:</h5>
+<pre><code class="lang-json">{
+  &quot;action&quot;: &quot;getLoginUrl&quot;,
+  &quot;params&quot;: {
+    &quot;room_id&quot;: 1,
+    &quot;user_id&quot;: 6344,
+    &quot;ttl&quot;: 60
+  }
+}
+</code></pre>
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: &quot;https://www.skyroom.ir/ch/faramooz/meeting/t/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MDY2MDgxMzYsInVpZCI6NjM0N30.uFp056uU4JRKk_UxBy7sw0dkS7qQ80JL05N5_u62zUs&quot;
+}
 </code></pre>
 </div>
 </body>
