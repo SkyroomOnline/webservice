@@ -16,16 +16,16 @@
 <h3>آدرس وب‌سرویس</h3>
 <p>ساختار آدرس(URL) وب‌سرویس بدین‌گونه است:</p>
 <pre><code>https://www.your-website.ir/skyroom/api/{YOUR_API_KEY}
-</code></pre><p>که در آن <code>YOUR_API_KEY</code> یک رشته به طول ۱۶ حرف و کلید اختصاصی شما برای استفاده از وب‌سرویس می‌باشد. به این ترتیب این کلید همواره جزء ثابتی از آدرس وب‌سرویس برای تمامی درخواست‌های ارسالی خواهد بود.</p>
+</code></pre><p>که در آن <code>YOUR_API_KEY</code> یک رشته به طول ۵۲ حرف و کلید اختصاصی شما برای استفاده از وب‌سرویس می‌باشد. به این ترتیب این کلید همواره جزء ثابتی از آدرس وب‌سرویس برای تمامی درخواست‌های ارسالی خواهد بود.</p>
 <h3>ارسال درخواست</h3>
 <p>شکل کلی یک درخواست به صورت زیر است:</p>
-<pre><code class="lang-http">POST https://www.your-website.ir/skyroom/api/api-key-462353
+<pre><code class="lang-http">POST https://www.your-website.ir/skyroom/api/skyroomapi-e6ec9bf2-30e2c8f71a4bbde67c806b3ad58047e9
 {
-  &quot;action&quot;: &quot;action-name&quot;,
+  &quot;action&quot;: &quot;actionName&quot;,
   &quot;params&quot;: {
-    &quot;param1&quot;: &quot;value1&quot;,
-    &quot;param2&quot;: &quot;value2&quot;,
-    &quot;param3&quot;: &quot;value3&quot;,
+    &quot;param_1&quot;: &quot;value1&quot;,
+    &quot;param_2&quot;: &quot;value2&quot;,
+    &quot;param_3&quot;: &quot;value3&quot;,
     ...
   }
 }
@@ -76,7 +76,7 @@
 <pre><code class="lang-http">HTTP/1.1 200 OK
 {
   &quot;ok&quot;: false,
-  &quot;error_code&quot;: 13,
+  &quot;error_code&quot;: 14,
   &quot;error_message&quot;: &quot;درخواست شما با خطا روبرو شد.&quot;
 }
 </code></pre>
@@ -92,11 +92,11 @@
 <tbody>
 <tr>
 <td style="text-align:center">10</td>
-<td style="text-align:right">کلید API نامعتبر است.</td>
+<td style="text-align:right">کلید وب‌سرویس نامعتبر است.</td>
 </tr>
 <tr>
 <td style="text-align:center">11</td>
-<td style="text-align:right">درخواست شما معتبر نیست.</td>
+<td style="text-align:right">کلید وب‌سرویس نامعتبر است.</td>
 </tr>
 <tr>
 <td style="text-align:center">12</td>
@@ -104,14 +104,19 @@
 </tr>
 <tr>
 <td style="text-align:center">13</td>
-<td style="text-align:right">درخواست شما با خطا روبرو شد.</td>
+<td style="text-align:right">درخواست شما معتبر نیست.</td>
 </tr>
 <tr>
 <td style="text-align:center">14</td>
-<td style="text-align:right">داده‌ مورد نظر وجود ندارد.</td>
+<td style="text-align:right">درخواست شما با خطا روبرو شد.</td>
+</tr>
+<tr>
+<td style="text-align:center">15</td>
+<td style="text-align:right">داده‌ مورد نظر پیدا نشد.</td>
 </tr>
 </tbody>
 </table>
+<p><br></p>
 <h2>امکانات مدیریتی</h2>
 <p>امکانات مدیریتی ارایه شده در وب‌سرویس اسکای‌روم شامل سه بخش مدیریت سرویس‌ها، مدیریت اتاق‌ها و مدیریت کاربران می شود.</p>
 <h3>۱. مدیریت سرویس‌ها</h3>
@@ -136,8 +141,8 @@
 |time_total|number|مجموع نفرساعت مصرف شده|
 |start_time|Unix time|زمان شروع سرویس|
 |stop_time|Unix time|زمان پایان سرویس|
-|create_time|Unix time|زمان ایجاد سرویس|
-|update_time|Unix time|آخرین بروزرسانی سرویس|
+|create_time|Unix time|زمان ایجاد|
+|update_time|Unix time|آخرین بروزرسانی|
 
 #### توابع سرویس
 |نام تابع|شرح|مقدار بازگشتی|نوع مقدار بازگشتی
@@ -280,7 +285,7 @@ true
 <tr>
 <td style="text-align:left">status</td>
 <td style="text-align:left">number</td>
-<td style="text-align:right">وضعیت اتاق (0: غیرفعال - 1: فعال)</td>
+<td style="text-align:right">وضعیت اتاق</td>
 </tr>
 <tr>
 <td style="text-align:left">guest_login</td>
@@ -320,12 +325,12 @@ true
 <tr>
 <td style="text-align:left">create_time</td>
 <td style="text-align:left">Unix time</td>
-<td style="text-align:right">زمان ایجاد اتاق</td>
+<td style="text-align:right">زمان ایجاد</td>
 </tr>
 <tr>
 <td style="text-align:left">update_time</td>
 <td style="text-align:left">Unix time</td>
-<td style="text-align:right">آخرین بروزرسانی اتاق</td>
+<td style="text-align:right">آخرین بروزرسانی</td>
 </tr>
 </tbody>
 </table>
@@ -348,8 +353,8 @@ true
 </tr>
 <tr>
 <td style="text-align:left"><code>countRooms</code></td>
-<td style="text-align:right">دریافت لیست اتاق‌های موجود</td>
-<td style="text-align:right">لیست اتاق‌ها</td>
+<td style="text-align:right">دریافت تعداد اتاق‌های موجود</td>
+<td style="text-align:right">تعداد اتاق‌ها</td>
 <td>number</td>
 </tr>
 <tr>
@@ -574,12 +579,13 @@ true
   ]
 }
 </code></pre>
+<p>انواع دسترسی‌ها به اتاق عبارت است از «کاربر عادی»، «ارایه کننده»، «اپراتور» و «مدیر». جدول انواع دسترسی در انتهای همین صفحه آمده است.</p>
 <h4>افزودن دسترسی کاربران به یک اتاق</h4>
 <h5>درخواست:</h5>
 <pre><code class="lang-json">{
   &quot;action&quot;: &quot;addRoomUsers&quot;,
   &quot;params&quot;: {
-    &quot;room_id&quot;: 1175,
+    &quot;room_id&quot;: 1,
     &quot;users&quot;: [
         { &quot;user_id&quot;: 6344 },
         { &quot;user_id&quot;: 6345, &quot;access&quot;: 2 }
@@ -598,7 +604,7 @@ true
 <pre><code class="lang-json">{
   &quot;action&quot;: &quot;removeRoomUsers&quot;,
   &quot;params&quot;: {
-    &quot;room_id&quot;: 1175,
+    &quot;room_id&quot;: 1,
     &quot;users&quot;: [ 6344, 6345 ]
   }
 }
@@ -614,7 +620,7 @@ true
 <pre><code class="lang-json">{
   &quot;action&quot;: &quot;updateRoomUser&quot;,
   &quot;params&quot;: {
-    &quot;room_id&quot;: 1175,
+    &quot;room_id&quot;: 1,
     &quot;user_id&quot;: 6344,
     &quot;access&quot;: 3
   }
@@ -676,12 +682,12 @@ true
 <tr>
 <td style="text-align:left">gender</td>
 <td style="text-align:left">number</td>
-<td style="text-align:right">جنسیت (0: نامشخص - 1: مرد - 2: زن)</td>
+<td style="text-align:right">جنسیت</td>
 </tr>
 <tr>
 <td style="text-align:left">status</td>
 <td style="text-align:left">number</td>
-<td style="text-align:right">وضعیت کاربر (0: غیرفعال - 1: فعال)</td>
+<td style="text-align:right">وضعیت کاربر</td>
 </tr>
 <tr>
 <td style="text-align:left">is_public</td>
@@ -711,12 +717,12 @@ true
 <tr>
 <td style="text-align:left">create_time</td>
 <td style="text-align:left">Unix time</td>
-<td style="text-align:right">زمان ایجاد کاربر</td>
+<td style="text-align:right">زمان ایجاد</td>
 </tr>
 <tr>
 <td style="text-align:left">update_time</td>
 <td style="text-align:left">Unix time</td>
-<td style="text-align:right">آخرین بروزرسانی کاربر</td>
+<td style="text-align:right">آخرین بروزرسانی</td>
 </tr>
 </tbody>
 </table>
@@ -758,14 +764,14 @@ true
 <tr>
 <td style="text-align:left"><code>updateUser</code></td>
 <td style="text-align:right">بروزرسانی کاربر</td>
-<td style="text-align:right">true یا false</td>
-<td>bool</td>
+<td style="text-align:right">1</td>
+<td>number</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>deleteUser</code></td>
 <td style="text-align:right">حذف کاربر</td>
-<td style="text-align:right">true یا false</td>
-<td>bool</td>
+<td style="text-align:right">1</td>
+<td>number</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>getUserRooms</code></td>
@@ -810,9 +816,9 @@ true
       &quot;status&quot;: 1
     },
     {
-      &quot;id&quot;: 3,
-      &quot;username&quot;: &quot;sepideh&quot;,
-      &quot;nickname&quot;: &quot;سپیده&quot;,
+      &quot;id&quot;: 2,
+      &quot;username&quot;: &quot;sara&quot;,
+      &quot;nickname&quot;: &quot;سارا&quot;,
       &quot;status&quot;: 1
     }
   ]
@@ -865,7 +871,7 @@ true
 <h5>پاسخ:</h5>
 <pre><code class="lang-json">{
   &quot;ok&quot;: true,
-  &quot;result&quot;: 4
+  &quot;result&quot;: 3
 }
 </code></pre>
 <h4>بروزرسانی کاربر</h4>
@@ -873,7 +879,7 @@ true
 <pre><code class="lang-json">{
   &quot;action&quot;: &quot;updateUser&quot;,
   &quot;params&quot;: {
-    &quot;user_id&quot;: 4,
+    &quot;user_id&quot;: 3,
     &quot;password&quot;: &quot;tu-2017!&quot;
   }
 }
@@ -904,7 +910,7 @@ true
 <pre><code class="lang-json">{
   &quot;action&quot;: &quot;getUserRooms&quot;,
   &quot;params&quot;: {
-    &quot;user_id&quot;: 4
+    &quot;user_id&quot;: 1
   }
 }
 </code></pre>
@@ -932,7 +938,7 @@ true
 <pre><code class="lang-json">{
   &quot;action&quot;: &quot;addUserRooms&quot;,
   &quot;params&quot;: {
-    &quot;user_id&quot;: 6344,
+    &quot;user_id&quot;: 2,
     &quot;users&quot;: [
         { &quot;room_id&quot;: 1 },
         { &quot;room_id&quot;: 2, &quot;access&quot;: 2 }
@@ -951,7 +957,7 @@ true
 <pre><code class="lang-json">{
   &quot;action&quot;: &quot;removeUserRooms&quot;,
   &quot;params&quot;: {
-    &quot;user_id&quot;: 6344,
+    &quot;user_id&quot;: 2,
     &quot;rooms&quot;: [ 1, 2 ]
   }
 }
@@ -968,17 +974,108 @@ true
   &quot;action&quot;: &quot;getLoginUrl&quot;,
   &quot;params&quot;: {
     &quot;room_id&quot;: 1,
-    &quot;user_id&quot;: 6344,
-    &quot;ttl&quot;: 60
+    &quot;user_id&quot;: 1,
+    &quot;ttl&quot;: 300
   }
 }
 </code></pre>
+<p><code>ttl</code> یا Time To Live مدت زمان اعتبار لینک به ثانیه می‌باشد که در مثال بالا 300 ثانیه یا 5 دقیقه می‌باشد. پس از این مدت، لینک تولید شده معتبر نیست و در صورت استفاده، کاربر با خطای عدم اعتبار لینک روبرو می‌شود.</p>
 <h5>پاسخ:</h5>
 <pre><code class="lang-json">{
   &quot;ok&quot;: true,
   &quot;result&quot;: &quot;https://www.skyroom.ir/ch/faramooz/meeting/t/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MDY2MDgxMzYsInVpZCI6NjM0N30.uFp056uU4JRKk_UxBy7sw0dkS7qQ80JL05N5_u62zUs&quot;
 }
 </code></pre>
+<p><br></p>
+<h2>کدهای مفید</h2>
+<h4>وضعیت اتاق:</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">کد</th>
+<th style="text-align:left">شرح</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0</td>
+<td style="text-align:left">غیرفعال</td>
+</tr>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">فعال</td>
+</tr>
+</tbody>
+</table>
+<h4>وضعیت کاربر:</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">کد</th>
+<th style="text-align:left">شرح</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0</td>
+<td style="text-align:left">غیرفعال</td>
+</tr>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">فعال</td>
+</tr>
+</tbody>
+</table>
+<h4>جنسیت کاربر:</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">کد</th>
+<th style="text-align:left">شرح</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0</td>
+<td style="text-align:left">نامعلوم</td>
+</tr>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">مرد</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">زن</td>
+</tr>
+</tbody>
+</table>
+<h4>دسترسی به اتاق:</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">کد</th>
+<th style="text-align:left">شرح</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">کاربر عادی</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">ارایه کننده</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">اپراتور</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">مدیر</td>
+</tr>
+</tbody>
+</table>
 </div>
 </body>
 </html>

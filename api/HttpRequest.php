@@ -1,6 +1,6 @@
 <?php
 /**
- * HTTP Request using cURL
+ * HTTP Request implementation using cURL
  *
  * @version     1.0
  * @copyright   Skyroom.ir

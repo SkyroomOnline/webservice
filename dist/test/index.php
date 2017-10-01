@@ -7,7 +7,7 @@
  */
 
 require_once '../api/Skyroom.php';
-define('BASE_URL', 'http://localhost.skyroom/skyroom/api/');
+define('BASE_URL', 'https://test.skyroom.ir/skyroom/api/');
 
 if (empty($_POST)) {
     $markup = file_get_contents('form.html');
@@ -27,14 +27,6 @@ $url = BASE_URL . $apiKey;
 $api = new Skyroom($url);
 $action = $_POST['action'];
 switch ($action) {
-    case 'getServices':
-        $params = array();
-        break;
-
-    case 'getService':
-        $params = array();
-        break;
-
     case 'getRooms':
         $params = array();
         break;
@@ -136,7 +128,7 @@ switch ($action) {
 
     case 'updateUser':
         $params = array(
-            'user_id' => 6346,
+            'user_id' => 6361,
         );
         break;
 

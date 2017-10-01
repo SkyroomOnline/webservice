@@ -13,18 +13,18 @@
 ```
 https://www.your-website.ir/skyroom/api/{YOUR_API_KEY}
 ```  
-که در آن `YOUR_API_KEY` یک رشته به طول ۱۶ حرف و کلید اختصاصی شما برای استفاده از وب‌سرویس می‌باشد. به این ترتیب این کلید همواره جزء ثابتی از آدرس وب‌سرویس برای تمامی درخواست‌های ارسالی خواهد بود.
+که در آن `YOUR_API_KEY` یک رشته به طول ۵۲ حرف و کلید اختصاصی شما برای استفاده از وب‌سرویس می‌باشد. به این ترتیب این کلید همواره جزء ثابتی از آدرس وب‌سرویس برای تمامی درخواست‌های ارسالی خواهد بود.
 
 ### ارسال درخواست
 شکل کلی یک درخواست به صورت زیر است:
 ```http
-POST https://www.your-website.ir/skyroom/api/api-key-462353
+POST https://www.your-website.ir/skyroom/api/skyroomapi-e6ec9bf2-30e2c8f71a4bbde67c806b3ad58047e9
 {
-  "action": "action-name",
+  "action": "actionName",
   "params": {
-    "param1": "value1",
-    "param2": "value2",
-    "param3": "value3",
+    "param_1": "value1",
+    "param_2": "value2",
+    "param_3": "value3",
     ...
   }
 }
@@ -83,7 +83,7 @@ POST https://www.your-website.ir/skyroom/api/api-key-462353
 HTTP/1.1 200 OK
 {
   "ok": false,
-  "error_code": 13,
+  "error_code": 14,
   "error_message": "درخواست شما با خطا روبرو شد."
 }
 ```
@@ -93,12 +93,13 @@ HTTP/1.1 200 OK
 
 |کد خطا|توضیح|
 |:---:|---:|
-|10|کلید API نامعتبر است.|
-|11|درخواست شما معتبر نیست.|
+|10|کلید وب‌سرویس نامعتبر است.|
+|11|کلید وب‌سرویس نامعتبر است.|
 |12|درخواست شما غیرمجاز است.|
-|13|درخواست شما با خطا روبرو شد.|
-|14|داده‌ مورد نظر وجود ندارد.|
-
+|13|درخواست شما معتبر نیست.|
+|14|درخواست شما با خطا روبرو شد.|
+|15|داده‌ مورد نظر پیدا نشد.|
+<br>
 
 ## امکانات مدیریتی
 امکانات مدیریتی ارایه شده در وب‌سرویس اسکای‌روم شامل سه بخش مدیریت سرویس‌ها، مدیریت اتاق‌ها و مدیریت کاربران می شود.
@@ -126,8 +127,8 @@ HTTP/1.1 200 OK
 |time_total|number|مجموع نفرساعت مصرف شده|
 |start_time|Unix time|زمان شروع سرویس|
 |stop_time|Unix time|زمان پایان سرویس|
-|create_time|Unix time|زمان ایجاد سرویس|
-|update_time|Unix time|آخرین بروزرسانی سرویس|
+|create_time|Unix time|زمان ایجاد|
+|update_time|Unix time|آخرین بروزرسانی|
 
 #### توابع سرویس
 |نام تابع|شرح|مقدار بازگشتی|نوع مقدار بازگشتی
@@ -247,7 +248,7 @@ true
 |name|string|نام اتاق به لاتین و به طول حداکثر ۱۲۸ حرف|
 |title|string|عنوان اتاق به طول حداکثر ۱۲۸ حرف|
 |description|string|شرح اتاق به طول حداکثر ۵۱۲ حرف|
-|status|number|وضعیت اتاق (0: غیرفعال - 1: فعال)|
+|status|number|وضعیت اتاق|
 |guest_login|bool|ورود به صورت میهمان|
 |op_login_first|bool|ابتدا اپراتور وارد شود|
 |max_users|number|سقف تعداد کاربر آنلاین|
@@ -255,14 +256,14 @@ true
 |time_limit|number|محدودیت نفرساعت|
 |time_usage|number|نفرساعت مصرف شده|
 |time_total|number|مجموع نفرساعت مصرف شده|
-|create_time|Unix time|زمان ایجاد اتاق|
-|update_time|Unix time|آخرین بروزرسانی اتاق|
+|create_time|Unix time|زمان ایجاد|
+|update_time|Unix time|آخرین بروزرسانی|
 
 #### توابع اتاق
 |نام تابع|شرح|مقدار بازگشتی|نوع مقدار بازگشتی
 |:---|---:|---:|
 |`getRooms`|دریافت لیست اتاق‌های موجود|لیست اتاق‌ها|[]
-|`countRooms`|دریافت لیست اتاق‌های موجود|لیست اتاق‌ها|number
+|`countRooms`|دریافت تعداد اتاق‌های موجود|تعداد اتاق‌ها|number
 |`getRoom`|دریافت مشخصات یک اتاق|مشخصات اتاق|{}
 |`getRoomUrl`|دریافت آدرس یک اتاق|آدرس اتاق|string
 |`createRoom`|ایجاد اتاق جدید|شناسه اتاق ایجاد شده|number
@@ -471,6 +472,7 @@ true
   ]
 }
 ```
+انواع دسترسی‌ها به اتاق عبارت است از «کاربر عادی»، «ارایه کننده»، «اپراتور» و «مدیر». جدول انواع دسترسی در انتهای همین صفحه آمده است.
 
 #### افزودن دسترسی کاربران به یک اتاق
 ##### درخواست:
@@ -478,7 +480,7 @@ true
 {
   "action": "addRoomUsers",
   "params": {
-    "room_id": 1175,
+    "room_id": 1,
     "users": [
         { "user_id": 6344 },
         { "user_id": 6345, "access": 2 }
@@ -501,7 +503,7 @@ true
 {
   "action": "removeRoomUsers",
   "params": {
-    "room_id": 1175,
+    "room_id": 1,
     "users": [ 6344, 6345 ]
   }
 }
@@ -521,7 +523,7 @@ true
 {
   "action": "updateRoomUser",
   "params": {
-    "room_id": 1175,
+    "room_id": 1,
     "user_id": 6344,
     "access": 3
   }
@@ -550,15 +552,15 @@ true
 |email|string|آدرس ایمیل به طول حداکثر ۱۲۸ حرف|
 |fname|string|نام به طول حداکثر ۱۲۸ حرف|
 |lname|string|نام خانوادگی به طول حداکثر ۱۲۸ حرف|
-|gender|number|جنسیت (0: نامشخص - 1: مرد - 2: زن)|
-|status|number|وضعیت کاربر (0: غیرفعال - 1: فعال)|
+|gender|number|جنسیت|
+|status|number|وضعیت کاربر|
 |is_public|bool|کاربر عمومی|
 |time_limit|number|محدودیت زمانی (ساعت)|
 |time_usage|number|زمان مصرف شده (ساعت)|
 |time_total|number|مجموع زمان مصرف شده (ساعت)|
 |expiry_date|Unix time|تاریخ انقضا|
-|create_time|Unix time|زمان ایجاد کاربر|
-|update_time|Unix time|آخرین بروزرسانی کاربر|
+|create_time|Unix time|زمان ایجاد|
+|update_time|Unix time|آخرین بروزرسانی|
 
 #### توابع کاربر
 |نام تابع|شرح|مقدار بازگشتی|نوع مقدار بازگشتی
@@ -567,8 +569,8 @@ true
 |`countUsers`|دریافت تعداد کاربران موجود|تعداد کاربران|number
 |`getUser`|دریافت مشخصات یک کاربر|مشخصات کاربر|{}
 |`createUser`|ایجاد کاربر جدید|شناسه کاربر ایجاد شده|number
-|`updateUser`|بروزرسانی کاربر|true یا false|bool
-|`deleteUser`|حذف کاربر|true یا false|bool
+|`updateUser`|بروزرسانی کاربر|1|number
+|`deleteUser`|حذف کاربر|1|number
 |`getUserRooms`|دریافت لیست اتاق‌های کاربر|لیست اتاق‌ها|[]
 |`addUserRooms`|افزودن به اتاق‌های کاربر|1|number
 |`removeUserRooms`|حذف از اتاق‌های کاربر|1|number
@@ -594,9 +596,9 @@ true
       "status": 1
     },
     {
-      "id": 3,
-      "username": "sepideh",
-      "nickname": "سپیده",
+      "id": 2,
+      "username": "sara",
+      "nickname": "سارا",
       "status": 1
     }
   ]
@@ -657,7 +659,7 @@ true
 ```json
 {
   "ok": true,
-  "result": 4
+  "result": 3
 }
 ```
 
@@ -667,7 +669,7 @@ true
 {
   "action": "updateUser",
   "params": {
-    "user_id": 4,
+    "user_id": 3,
     "password": "tu-2017!"
   }
 }
@@ -706,7 +708,7 @@ true
 {
   "action": "getUserRooms",
   "params": {
-    "user_id": 4
+    "user_id": 1
   }
 }
 ```
@@ -738,7 +740,7 @@ true
 {
   "action": "addUserRooms",
   "params": {
-    "user_id": 6344,
+    "user_id": 2,
     "users": [
         { "room_id": 1 },
         { "room_id": 2, "access": 2 }
@@ -761,7 +763,7 @@ true
 {
   "action": "removeUserRooms",
   "params": {
-    "user_id": 6344,
+    "user_id": 2,
     "rooms": [ 1, 2 ]
   }
 }
@@ -782,11 +784,12 @@ true
   "action": "getLoginUrl",
   "params": {
     "room_id": 1,
-    "user_id": 6344,
-    "ttl": 60
+    "user_id": 1,
+    "ttl": 300
   }
 }
 ```
+`ttl` یا Time To Live مدت زمان اعتبار لینک به ثانیه می‌باشد که در مثال بالا 300 ثانیه یا 5 دقیقه می‌باشد. پس از این مدت، لینک تولید شده معتبر نیست و در صورت استفاده، کاربر با خطای عدم اعتبار لینک روبرو می‌شود.
 
 ##### پاسخ:
 ```json
@@ -795,3 +798,33 @@ true
   "result": "https://www.skyroom.ir/ch/faramooz/meeting/t/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MDY2MDgxMzYsInVpZCI6NjM0N30.uFp056uU4JRKk_UxBy7sw0dkS7qQ80JL05N5_u62zUs"
 }
 ```
+<br>
+
+## کدهای مفید
+
+#### وضعیت اتاق:
+|کد|شرح|
+|:---|:---|
+|0|غیرفعال|
+|1|فعال|
+
+#### وضعیت کاربر:
+|کد|شرح|
+|:---|:---|
+|0|غیرفعال|
+|1|فعال|
+
+#### جنسیت کاربر:
+|کد|شرح|
+|:---|:---|
+|0|نامعلوم|
+|1|مرد|
+|2|زن|
+
+#### دسترسی به اتاق:
+|کد|شرح|
+|:---|:---|
+|1|کاربر عادی|
+|2|ارایه کننده|
+|3|اپراتور|
+|4|مدیر|
