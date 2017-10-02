@@ -13,12 +13,12 @@
 ```
 https://www.your-website.ir/skyroom/api/{YOUR_API_KEY}
 ```  
-که در آن `YOUR_API_KEY` یک رشته به طول ۵۲ حرف و کلید اختصاصی شما برای استفاده از وب‌سرویس می‌باشد. به این ترتیب این کلید همواره جزء ثابتی از آدرس وب‌سرویس برای تمامی درخواست‌های ارسالی خواهد بود.
+که در آن `YOUR_API_KEY` یک رشته به طول ۵۰ حرف و کلید اختصاصی شما برای استفاده از وب‌سرویس می‌باشد. به این ترتیب این کلید همواره جزء ثابتی از آدرس وب‌سرویس برای تمامی درخواست‌های ارسالی خواهد بود.
 
 ### ارسال درخواست
 شکل کلی یک درخواست به صورت زیر است:
 ```http
-POST https://www.your-website.ir/skyroom/api/skyroomapi-e6ec9bf2-30e2c8f71a4bbde67c806b3ad58047e9
+POST https://www.your-website.ir/skyroom/api/skyroom-71-819540-0f178abb0c712c4cfd5ae13e4c54687a
 {
   "action": "actionName",
   "params": {
