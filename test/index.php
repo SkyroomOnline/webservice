@@ -59,7 +59,8 @@ switch ($action) {
 
     case 'updateRoom':
         $params = array(
-            'room_id' => 1178,
+            'room_id' => 1,
+            'title' => 'Room 1',
         );
         break;
 
@@ -71,16 +72,15 @@ switch ($action) {
 
     case 'getRoomUsers':
         $params = array(
-            'room_id' => 1175,
+            'room_id' => 1,
         );
         break;
 
     case 'addRoomUsers':
         $params = array(
-            'room_id' => 1175,
+            'room_id' => 1,
             'users' => array(
-                array('user_id' => 6344),
-                array('user_id' => 6345, 'access' => Skyroom::USER_ACCESS_PRESENTER),
+                array('user_id' => 4, 'access' => Skyroom::USER_ACCESS_PRESENTER),
             ),
         );
         break;
@@ -163,8 +163,8 @@ switch ($action) {
 
     case 'getLoginUrl':
         $params = array(
-            'room_id' => 1174,
-            'user_id' => 6347,
+            'room_id' => 1,
+            'user_id' => 4,
             'ttl' => 60,
         );
         break;
