@@ -42,10 +42,10 @@ class Skyroom
     public function call($action, $params = array()) {
         $data = array(
             'action' => $action,
-            'params' => json_encode($params),
+            'params' => $params,
         );
         try {
-            return $this->http->post($data);
+            return $this->http->post(json_encode($data));
         } catch (Exception $e) {
             return new Skyroom\HttpError($e->getMessage(), $e->getCode());
         }
