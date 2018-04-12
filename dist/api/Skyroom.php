@@ -8,7 +8,7 @@
 
 class Skyroom
 {
-    const VERSION = '1.0 beta';
+    const VERSION = '1.0';
 
     const ROOM_STATUS_DISABLED   = 0;
     const ROOM_STATUS_ENABLED    = 1;
@@ -42,10 +42,10 @@ class Skyroom
     public function call($action, $params = array()) {
         $data = array(
             'action' => $action,
-            'params' => json_encode($params),
+            'params' => $params,
         );
         try {
-            return $this->http->post($data);
+            return $this->http->post(json_encode($data));
         } catch (Exception $e) {
             return new Skyroom\HttpError($e->getMessage(), $e->getCode());
         }

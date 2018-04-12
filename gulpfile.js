@@ -10,7 +10,7 @@ const replace = require('gulp-replace');
 const markdown = require('gulp-markdown');
 
 gulp.task('clean', function (cb) {
-  del.sync(['dist/*']);
+  del.sync(['dist/*', '!dist/*.zip']);
   cb();
 });
 

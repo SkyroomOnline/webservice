@@ -20,20 +20,26 @@ class HttpRequest
     /**
      * Prepares and sends the request to the server via HTTP POST
      *
-     * @param   array   $data Request params
+     * @param   [string|array]  $data Request body in json encoded or url encoded format
+     * @param   string  $format Content type
      * @return  array   Response array
      * @throws  HttpException
      * @throws  JsonException
      * @throws  NetworkException
      */
-    public function post($data)
+    public function post($data, $format = 'json')
     {
-        $queryString = '';
-        if (!is_null($data)) {
-            foreach($data as $key => $value) {
-                $queryString .= $key . '=' . $value . '&';
+        $contentType = 'application/json';
+
+        if ($format !== 'json') {
+            $contentType = 'application/x-www-form-urlencoded';
+            $queryString = '';
+            if (is_array($data)) {
+                foreach($data as $key => $value) {
+                    $queryString .= $key . '=' . $value . '&';
+                }
+                $data = rtrim($queryString, '&');
             }
-            $queryString = rtrim($queryString, '&');
         }
 
         // set request options
@@ -43,10 +49,10 @@ class HttpRequest
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
         curl_setopt($curl, CURLOPT_TIMEOUT, 30);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $queryString);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
         curl_setopt($curl, CURLOPT_HTTPHEADER, array (
             'Accept: application/json',
-            'Content-Type: application/x-www-form-urlencoded',
+            "Content-Type: $contentType",
         ));
 
         // make the request
