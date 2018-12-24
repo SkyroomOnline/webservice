@@ -41,6 +41,7 @@ switch ($action) {
         $params = array(
             'room_id' => 1,
             'relative' => true,
+            'language' => 'fa',
         );
         break;
 
@@ -162,6 +163,7 @@ switch ($action) {
         $params = array(
             'room_id' => 1,
             'user_id' => 5,
+            'language' => 'fa',
             'ttl' => 60,
         );
         break;

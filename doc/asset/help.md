@@ -360,7 +360,8 @@ true
 {
   "action": "getRoomUrl",
   "params": {
-    "room_id": 1
+    "room_id": 1,
+    "language": "fa"
   }
 }
 ```
@@ -785,6 +786,7 @@ true
   "params": {
     "room_id": 1,
     "user_id": 1,
+    "language": "fa",
     "ttl": 300
   }
 }
