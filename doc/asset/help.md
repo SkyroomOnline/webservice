@@ -3,7 +3,7 @@
 ##  آشنایی با وب‌سرویس اسکای‌روم
 
 ###  معرفی
-وب‌سرویس اسکای‌روم با هدف یک‍پارچه‌سازی و بکارگیری سرویس‌های اسکای‌روم در سایر سامانه‌ها و برنامه‌های نرم‌افزاری طراحی و پیاده‌سازی شده است. با بهره‌گیری از وب‌سرویس اسکای‌روم می توانید سرویس‌ها، اتاق‌های مجازی، کاربران و سایر امکانات فراهم شده را از درون سامانه یا اپلیکیشن خود و با فراخوانی دستورات وب‌سرویس (API) مدیریت نمایید. همچنین در صورت نیاز می توانید با استفاده از سرویس احراز هویت یکپارچه (SSO)، بدون نیاز به ایجاد کاربر و درخواست کدکاربری و گذرواژه به هنگام ورود به اتاق مجازی، کاربران خود را از طریق ‌وبسایت و پایگاه داده خود احراز هویت کنید.
+وب‌سرویس اسکای‌روم با هدف یک‍پارچه‌سازی و بکارگیری سرویس‌های اسکای‌روم در سایر سامانه‌ها و برنامه‌های نرم‌افزاری طراحی و پیاده‌سازی شده است. با بهره‌گیری از وب‌سرویس اسکای‌روم می توانید سرویس‌ها، اتاق‌های مجازی، کاربران و سایر امکانات فراهم شده را از درون سامانه یا اپلیکیشن خود و با فراخوانی دستورات وب‌سرویس (API) مدیریت نمایید.
 
 ### مشخصات فنی
 وب‌سرویس اسکای‌روم بر پایه REST طراحی و پیاده‌سازی گردیده و در آن تلاش شده است تا ضمن الگوبرداری از استانداردهای رایج دنیا، سادگی در اولویت نخست باشد. از اینرو در وب‌سرویس اسکای‌روم تمامی درخواست(request)ها به شکل POST ارسال می گردند. فرمت داده‌های ارسالی (content-type) می‌تواند یکی از انواع JSON یا URL-Encoded باشد اما پاسخ همواره JSON خواهد بود. همچنین به منظور تفکیک خطاهای شبکه و سرور از خطاهای برنامه، تمامی پاسخ‌ها از سوی وب‌سرویس، چه موفق چه ناموفق، با کد وضعیت 200 برگردانده می شود (200 = HTTP Status Code).
@@ -11,14 +11,14 @@
 ### آدرس وب‌سرویس
 ساختار آدرس(URL) وب‌سرویس بدین‌گونه است:
 ```
-https://www.your-website.ir/skyroom/api/{YOUR_API_KEY}
+https://www.skyroom.online/skyroom/api/{your-api-key}
 ```  
-که در آن `YOUR_API_KEY` یک رشته به طول ۵۰ حرف و کلید اختصاصی شما برای استفاده از وب‌سرویس می‌باشد. به این ترتیب این کلید همواره جزء ثابتی از آدرس وب‌سرویس برای تمامی درخواست‌های ارسالی خواهد بود.
+که در آن `{your-api-key}` یک رشته به طول ۵۰ حرف و کلید اختصاصی شما برای استفاده از وب‌سرویس می‌باشد. به این ترتیب این کلید همواره جزء ثابتی از آدرس وب‌سرویس برای تمامی درخواست‌های ارسالی خواهد بود.
 
 ### ارسال درخواست
 شکل کلی یک درخواست به صورت زیر است:
 ```http
-POST https://www.your-website.ir/skyroom/api/skyroom-71-819540-0f178abb0c712c4cfd5ae13e4c54687a
+POST https://www.skyroom.online/skyroom/api/skyroom-71-819540-0f178abb0c712c4cfd5ae13e4c54687a
 {
   "action": "actionName",
   "params": {
@@ -49,7 +49,7 @@ POST https://www.your-website.ir/skyroom/api/skyroom-71-819540-0f178abb0c712c4cf
 ```json
 {
   "ok": true,
-  "result": "https://www.skyroom.ir/ch/web-conference"
+  "result": "https://www.skyroom.online/ch/web-conference"
 }
 ```
 ```json
@@ -369,7 +369,7 @@ true
 ```json
 {
   "ok": true,
-  "result": "https://www.skyroom.ir/ch/faramooz/meeting"
+  "result": "https://www.skyroom.online/ch/faramooz/meeting"
 }
 ```
 
@@ -670,7 +670,7 @@ true
   "action": "updateUser",
   "params": {
     "user_id": 3,
-    "password": "tu-2017!"
+    "password": "tu2017!"
   }
 }
 ```
@@ -795,7 +795,7 @@ true
 ```json
 {
   "ok": true,
-  "result": "https://www.skyroom.ir/ch/faramooz/meeting/t/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MDY2MDgxMzYsInVpZCI6NjM0N30.uFp056uU4JRKk_UxBy7sw0dkS7qQ80JL05N5_u62zUs"
+  "result": "https://www.skyroom.online/ch/faramooz/meeting/t/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MDY2MDgxMzYsInVpZCI6NjM0N30.uFp056uU4JRKk_UxBy7sw0dkS7qQ80JL05N5_u62zUs"
 }
 ```
 <br>

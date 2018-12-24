@@ -1,6 +1,6 @@
 {
   "name": "webservice",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,21 +8,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/skyroom/webservice.git"
+    "url": "git+ssh://git@github.com:SkyroomOnline/web-service.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/skyroom/webservice/issues"
+    "url": "https://github.com/SkyroomOnline/web-service/issues"
   },
-  "homepage": "https://gitlab.com/skyroom/webservice#README",
+  "homepage": "https://github.com/SkyroomOnline/web-service",
   "dependencies": {
     "del": "^3.0.0",
     "fs": "0.0.1-security",
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "^4.0.0",
     "gulp-markdown": "^1.2.0",
+    "gulp-rename": "^1.4.0",
     "gulp-replace": "^0.6.1",
-    "marked": "^0.3.6",
-    "pump": "^1.0.2"
+    "marked": "^0.5.2",
+    "pump": "^1.0.3"
   }
 }

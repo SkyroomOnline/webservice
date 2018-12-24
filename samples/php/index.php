@@ -2,29 +2,25 @@
 /**
  * Sample Implementation of the Skyroom Web Service
  *
- * @version     1.0
- * @copyright   Skyroom.ir
+ * @copyright   Skyroom.online
  */
 
-require_once '../api/Skyroom.php';
-define('BASE_URL', 'https://test.skyroom.ir/skyroom/api/');
+require_once 'api/Skyroom.php';
 
 if (empty($_POST)) {
-    $markup = file_get_contents('form.html');
-    $markup = str_replace('{{base_url}}', BASE_URL, $markup);
+    $markup = file_get_contents('asset/form.html');
     $markup = str_replace('{{version}}', Skyroom::VERSION, $markup);
     print($markup);
   exit;
 }
 
-$apiKey = $_POST['api_key'];
-if (empty($apiKey)) {
+$apiUrl = $_POST['api_url'];
+if (empty($apiUrl)) {
     print('<pre>No API key is provided!</pre>');
     return;
 }
 
-$url = BASE_URL . $apiKey;
-$api = new Skyroom($url);
+$api = new Skyroom($apiUrl);
 $action = $_POST['action'];
 switch ($action) {
     case 'getRooms':
@@ -37,13 +33,13 @@ switch ($action) {
 
     case 'getRoom':
         $params = array(
-            'room_id' => 1175,
+            'room_id' => 1,
         );
         break;
 
     case 'getRoomUrl':
         $params = array(
-            'room_id' => 1175,
+            'room_id' => 1,
             'relative' => true,
         );
         break;
@@ -60,13 +56,14 @@ switch ($action) {
     case 'updateRoom':
         $params = array(
             'room_id' => 1,
-            'title' => 'Room 1',
+            'time_limit' => 3600,
+            'session_duration' => 120,
         );
         break;
 
     case 'deleteRoom':
         $params = array(
-            'room_id' => 1177,
+            'room_id' => 1,
         );
         break;
 
@@ -80,22 +77,22 @@ switch ($action) {
         $params = array(
             'room_id' => 1,
             'users' => array(
-                array('user_id' => 4, 'access' => Skyroom::USER_ACCESS_PRESENTER),
+                array('user_id' => 5, 'access' => Skyroom::USER_ACCESS_PRESENTER),
             ),
         );
         break;
 
     case 'removeRoomUsers':
         $params = array(
-            'room_id' => 1175,
+            'room_id' => 1,
             'users' => array(6344, 6345),
         );
         break;
 
     case 'updateRoomUser':
         $params = array(
-            'room_id' => 1175,
-            'user_id' => 6344,
+            'room_id' => 1,
+            'user_id' => 5,
             'access' => Skyroom::USER_ACCESS_OPERATOR,
         );
         break;
@@ -110,7 +107,7 @@ switch ($action) {
 
     case 'getUser':
         $params = array(
-            'user_id' => 6361,
+            'user_id' => 5,
         );
         break;
 
@@ -128,43 +125,43 @@ switch ($action) {
 
     case 'updateUser':
         $params = array(
-            'user_id' => 6361,
+            'user_id' => 5,
         );
         break;
 
     case 'deleteUser':
         $params = array(
-            'user_id' => 6346,
+            'user_id' => 5,
         );
         break;
 
     case 'getUserRooms':
         $params = array(
-            'user_id' => 6347,
+            'user_id' => 5,
         );
         break;
 
     case 'addUserRooms':
         $params = array(
-            'user_id' => 6347,
+            'user_id' => 5,
             'rooms' => array(
-                array('room_id' => 1175),
-                array('room_id' => 1174, 'access' => Skyroom::USER_ACCESS_PRESENTER),
+                array('room_id' => 1),
+                array('room_id' => 2, 'access' => Skyroom::USER_ACCESS_PRESENTER),
             ),
         );
         break;
 
     case 'removeUserRooms':
         $params = array(
-            'user_id' => 6347,
-            'rooms' => array(1175, 1179),
+            'user_id' => 5,
+            'rooms' => array(1, 2),
         );
         break;
 
     case 'getLoginUrl':
         $params = array(
             'room_id' => 1,
-            'user_id' => 4,
+            'user_id' => 5,
             'ttl' => 60,
         );
         break;

@@ -2,8 +2,7 @@
 /**
  * HTTP Request implementation using cURL
  *
- * @version     1.0
- * @copyright   Skyroom.ir
+ * @copyright   Skyroom.online
  */
 
 namespace Skyroom;

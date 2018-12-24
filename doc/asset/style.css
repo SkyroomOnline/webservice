@@ -5,19 +5,19 @@
   font-family: 'Droid Arabic Naskh';
   font-style: normal;
   font-weight: 400;
-  src: url(font/DroidNaskh-Regular.eot);
-  src: url(font/DroidNaskh-Regular.woff2) format('woff2'),
-  url(font/DroidNaskh-Regular.woff) format('woff'),
-  url(font/DroidNaskh-Regular.ttf) format('truetype');
+  src: url(../font/DroidNaskh-Regular.eot);
+  src: url(../font/DroidNaskh-Regular.woff2) format('woff2'),
+  url(../font/DroidNaskh-Regular.woff) format('woff'),
+  url(../font/DroidNaskh-Regular.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Droid Arabic Naskh';
   font-style: normal;
   font-weight: 700;
-  src: url(font/DroidNaskh-Bold.eot);
-  src: url(font/DroidNaskh-Bold.woff2) format('woff2'),
-  url(font/DroidNaskh-Bold.woff) format('woff'),
-  url(font/DroidNaskh-Bold.ttf) format('truetype');
+  src: url(../font/DroidNaskh-Bold.eot);
+  src: url(../font/DroidNaskh-Bold.woff2) format('woff2'),
+  url(../font/DroidNaskh-Bold.woff) format('woff'),
+  url(../font/DroidNaskh-Bold.ttf) format('truetype');
 }
 
 body {

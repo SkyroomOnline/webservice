@@ -2,13 +2,12 @@
 /**
  * Skyroom Web Service API
  *
- * @version     1.0
- * @copyright   Skyroom.ir
+ * @copyright   Skyroom.online
  */
 
 class Skyroom
 {
-    const VERSION = '1.0';
+    const VERSION = '1.1.0';
 
     const ROOM_STATUS_DISABLED   = 0;
     const ROOM_STATUS_ENABLED    = 1;
