@@ -13,7 +13,7 @@
 ```
 https://www.skyroom.online/skyroom/api/{your-api-key}
 ```  
-که در آن `{your-api-key}` یک رشته به طول ۵۰ حرف و کلید اختصاصی شما برای استفاده از وب‌سرویس می‌باشد. به این ترتیب این کلید همواره جزء ثابتی از آدرس وب‌سرویس برای تمامی درخواست‌های ارسالی خواهد بود.
+که در آن `{your-api-key}` یک رشته به طول ۵۰ حرف و کلید اختصاصی شما برای استفاده از وب‌سرویس می‌باشد. به این ترتیب این کلید همواره جزء ثابتی از آدرس وب‌سرویس برای تمامی درخواست‌های ارسالی خواهد بود. چنانچه سرویس شما بر روی دامنه اختصاصی خودتان راه‌اندازی شده باشد می‌توانید به جای `www.skyroom.online` از آدرس دامین خود استفاده نمایید.
 
 ### ارسال درخواست
 شکل کلی یک درخواست به صورت زیر است:
@@ -250,6 +250,7 @@ true
 |description|string|شرح اتاق به طول حداکثر ۵۱۲ حرف|
 |status|number|وضعیت اتاق|
 |guest_login|bool|ورود به صورت میهمان|
+|guest_limit|number|محدودیت تعداد میهمان (0 = نامحدود)|
 |op_login_first|bool|ابتدا اپراتور وارد شود|
 |max_users|number|سقف تعداد کاربر آنلاین|
 |session_duration|number|محدودیت طول نشست|
@@ -342,6 +343,7 @@ true
     "description": null,
     "status": 1,
     "guest_login": false,
+    "guest_limit": 0,
     "op_login_first": true,
     "max_users": 8,
     "session_duration": null,
@@ -556,6 +558,7 @@ true
 |gender|number|جنسیت|
 |status|number|وضعیت کاربر|
 |is_public|bool|کاربر عمومی|
+|concurrent|number|محدودیت استفاده همزمان (0 = نامحدود)|
 |time_limit|number|محدودیت زمانی (ساعت)|
 |time_usage|number|زمان مصرف شده (ساعت)|
 |time_total|number|مجموع زمان مصرف شده (ساعت)|
@@ -631,6 +634,7 @@ true
     "gender": 1,
     "status": 1,
     "is_public": false,
+    "concurrent": 0,
     "time_limit": null,
     "time_usage": 426466,
     "time_total": 8464516,

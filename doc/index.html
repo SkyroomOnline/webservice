@@ -16,10 +16,10 @@
 <h3>آدرس وب‌سرویس</h3>
 <p>ساختار آدرس(URL) وب‌سرویس بدین‌گونه است:</p>
 <pre><code>https://www.skyroom.online/skyroom/api/{your-api-key}
-</code></pre><p>که در آن <code>{your-api-key}</code> یک رشته به طول ۵۰ حرف و کلید اختصاصی شما برای استفاده از وب‌سرویس می‌باشد. به این ترتیب این کلید همواره جزء ثابتی از آدرس وب‌سرویس برای تمامی درخواست‌های ارسالی خواهد بود.</p>
+</code></pre><p>که در آن <code>{your-api-key}</code> یک رشته به طول ۵۰ حرف و کلید اختصاصی شما برای استفاده از وب‌سرویس می‌باشد. به این ترتیب این کلید همواره جزء ثابتی از آدرس وب‌سرویس برای تمامی درخواست‌های ارسالی خواهد بود. چنانچه سرویس شما بر روی دامنه اختصاصی خودتان راه‌اندازی شده باشد می‌توانید به جای <code>www.skyroom.online</code> از آدرس دامین خود استفاده نمایید.</p>
 <h3>ارسال درخواست</h3>
 <p>شکل کلی یک درخواست به صورت زیر است:</p>
-<pre><code class="lang-http">POST https://www.skyroom.online/skyroom/api/skyroom-71-819540-0f178abb0c712c4cfd5ae13e4c54687a
+<pre><code class="lang-http">POST https://www.skyroom.online/skyroom/api/apikey-71-819540-0f178abb0c712c4cfd5ae13e4c54687a
 {
   &quot;action&quot;: &quot;actionName&quot;,
   &quot;params&quot;: {
@@ -293,6 +293,11 @@ true
 <td style="text-align:right">ورود به صورت میهمان</td>
 </tr>
 <tr>
+<td style="text-align:left">guest_limit</td>
+<td style="text-align:left">number</td>
+<td style="text-align:right">محدودیت تعداد میهمان (0 = نامحدود)</td>
+</tr>
+<tr>
 <td style="text-align:left">op_login_first</td>
 <td style="text-align:left">bool</td>
 <td style="text-align:right">ابتدا اپراتور وارد شود</td>
@@ -469,6 +474,7 @@ true
     &quot;description&quot;: null,
     &quot;status&quot;: 1,
     &quot;guest_login&quot;: false,
+    &quot;guest_limit&quot;: 0,
     &quot;op_login_first&quot;: true,
     &quot;max_users&quot;: 8,
     &quot;session_duration&quot;: null,
@@ -696,6 +702,11 @@ true
 <td style="text-align:right">کاربر عمومی</td>
 </tr>
 <tr>
+<td style="text-align:left">concurrent</td>
+<td style="text-align:left">number</td>
+<td style="text-align:right">محدودیت استفاده همزمان (0 = نامحدود)</td>
+</tr>
+<tr>
 <td style="text-align:left">time_limit</td>
 <td style="text-align:left">number</td>
 <td style="text-align:right">محدودیت زمانی (ساعت)</td>
@@ -847,6 +858,7 @@ true
     &quot;gender&quot;: 1,
     &quot;status&quot;: 1,
     &quot;is_public&quot;: false,
+    &quot;concurrent&quot;: 0,
     &quot;time_limit&quot;: null,
     &quot;time_usage&quot;: 426466,
     &quot;time_total&quot;: 8464516,
