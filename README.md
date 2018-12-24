@@ -1,6 +1,7 @@
 ### Sample Codes
 - PHP
 - ASP.NET
+- Postman
 
 ### Documentation
 https://data.skyroom.online/help/webservice.html

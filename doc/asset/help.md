@@ -18,7 +18,7 @@ https://www.skyroom.online/skyroom/api/{your-api-key}
 ### ارسال درخواست
 شکل کلی یک درخواست به صورت زیر است:
 ```http
-POST https://www.skyroom.online/skyroom/api/skyroom-71-819540-0f178abb0c712c4cfd5ae13e4c54687a
+POST https://www.skyroom.online/skyroom/api/apikey-71-819540-0f178abb0c712c4cfd5ae13e4c54687a
 {
   "action": "actionName",
   "params": {
