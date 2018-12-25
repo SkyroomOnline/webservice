@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skyroom Web Service Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAABuwAAAbsBOuzj4gAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQsSURBVFiF7ZZfaJV1GMc/39/7njYt2h/FMIUI08AgGWpDN2gXEkq7SMM1dGcwRuSV4UUYhSlaZFCWJhQomTOs1k1FokLa6c82lkopBJGL3Wyl4J+lU8/On/fpwnPO3h3Pjme5ruq5et/n932f5/M8v+f344X/uqlU4cJOq5hyg8WBmA5EHPT75fwca9LwvwpQ32G1Bi8j6g1c3vI1wcGIxxuxNbowKQD1+21e4NEuY64ZUyW6AuOSg40m7i0YxfhD0NrVqpN3BFDXYesQ2wwieaJLwCaM18eFgCGDZT1R9U0EINfSug5bZWJ7fnIAg2pgqzm2F4lV6WAPZiXPVQ5gxS4rM3itmNBgGgFVmW6Mp6mpO8DKCQMMV7MIMfN2YkEDsE/wOXBmnIjNEwHwAdIBc0s5kCYquqPaln1f8pE1ytgLlOc0xuMrdlnZ4fUaKQXAAThHokTgy+GXnhZ9hbEpT1M2NJ0HS4x3EyCZ5IQMK0F/NN9RMUSHjCtjnCkemBBAb5vOIr4pJpRxJZniYL7/8HqNmMbOg6CqVAA/+5CGVz1jnonZBXRxRPuJNp0rCAcD4fbJURleX/qhzXGO+Wnj/OwpnPqsSelbABxswHhHYoHBKuBuQRI4jsfWrjX6ZbwqDM5lHs4JPvV8DjXss8qkR7NBK2J+AEgwOMLp2j3W1Puszo8BADDHm8AZjJ3OGE47Ig4uFEsO4Iyvg4DuWVM5NnCDhSR5KeWzktDpCNkCfwrvAk2Z7mXadMA2Axvy1YLBSIqFsTbFxwOo3WP3eWU8A6xFPFwMNlcsLOqJqs8POXoLXQUGsxI+bzVssedjW5TK+ld3mjcQZ5m72eInCl3huSKMBHDDREXW56AWGAVIXOdY+VQuGkwrEGNtcg7zl+y3A57HZTNqBuOslph5m7PbL2N3vIqPZ/STvlLJByaezFQ2A0IzcOo5Jes6bC9iY6FIBjVy1ATZjMVvztMydt5fzhfhiV960HaT4lGJiIlrYwAAImneTvo8bfBQ8cIKm+C4YFfg6E8nUDg5gC8G0vCt4IwTP0DeH06sTfGUeAr4fQJ548D7vlETBGwzY50CfvIctWHRY/ttWjrJYRMtAWz1+vjtFgCA3hYNeNCIceQ2ia/JeM/3Wdwd1YsJUeUcx0wsN3DmRgcuU/0roUvOj20mDXlbkLXvo/oTaK7vsPpANAKLMKolrptxFjiqJIe62nU1+42luGr+aEEKbeMjnXaX4qzODazRi2QZ3eRYQ6fdkxhhIOcwLphYPruM/vNx5qVEz+gSzT1RHYECW/BPLdakYcFgziGmC04OjjAYiBXcnBVk7Mgmh3G24A7sOBDN85UbtGO8gOPXrqhOhBcnrQMAnrEDGMr3G1RK/NXdMjb5pAN816p+jEbBjzJMcFHwiW/Ud0X15WTm+t8mzf4GzryDpPkzwYUAAAAASUVORK5CYII=">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/site.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="title-container text-center">
+        <h2>Skyroom Web Service Demo <small>v1.1</small></h2>
+    </div>
+    <div class="row justify-content-md-center key-input-container">
+        <div class="col-lg-8 col-12">
+            <div class="input-group input-group-sm">
+                <span class="input-group-addon d-none d-sm-block">API Url</span>
+                <input type="text" name="APIUrl" id="APIUrl" class="form-control" placeholder="API Url" value="https://www.skyroom.online/skyroom/api/{your-api-key}" />
+            </div>
+        </div>
+    </div>
+    <div class="row row-margin">
+        <div class="col-12">
+            <div class="card card-bordered">
+                <div class="card-body">
+                    <h4 class="card-title">Functions</h4>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Room:</label>
+                        <div class="col-sm-10">
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="getRooms">getRooms</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="countRooms">countRooms</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="getRoom">getRoom</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="getRoomUrl">getRoomUrl</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="createRoom">createRoom</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="updateRoom">updateRoom</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="deleteRoom">deleteRoom</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="getRoomUsers">getRoomUsers</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="addRoomUsers">addRoomUsers</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="removeRoomUsers">removeRoomUsers</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="updateRoomUser">updateRoomUser</button>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">User:</label>
+                        <div class="col-sm-10">
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="getUsers">getUsers</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="countUsers">countUsers</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="getUser">getUser</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="createUser">createUser</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="updateUser">updateUser</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="deleteUser">deleteUser</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="getUserRooms">getUserRooms</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="addUserRooms">addUserRooms</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="removeUserRooms">removeUserRooms</button>
+                            <button type="button" class="btn btn-sm btn-info btn-action" data-action="getLoginUrl">getLoginUrl</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-margin">
+        <div class="col-12">
+            <div class="card card-bordered result-card">
+                <div class="card-body">
+                    <h4 class="card-title">Result</h4>
+                </div>
+                <div class="card-footer result-container">
+                    <div class="result-content"><pre>Enter API Key and choose an action</pre></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
