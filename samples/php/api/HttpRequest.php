@@ -44,6 +44,7 @@ class HttpRequest
         // set request options
         $curl = curl_init($this->url);
         curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
