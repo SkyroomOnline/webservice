@@ -746,7 +746,7 @@ true
   "action": "addUserRooms",
   "params": {
     "user_id": 2,
-    "users": [
+    "rooms": [
         { "room_id": 1 },
         { "room_id": 2, "access": 2 }
     ]
