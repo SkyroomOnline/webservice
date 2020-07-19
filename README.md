@@ -1,11 +1,6 @@
-## Sample Codes
-- PHP
-- C#
-- Postman
-- [Python (by Aria Moradi)](https://github.com/AriaMoradi/skyroom-python)
+# Hi Guys
+Official Skyroom Online REST API V2
+This export file allows you to view all implementations of our web services gateways in Postman software.
 
-## Documentation
-https://data.skyroom.online/help/webservice.html
 
-## Support
-https://www.skyroom.online/contact
+Enjoy it ;)

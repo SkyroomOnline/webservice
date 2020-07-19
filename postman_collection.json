@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "fd194b17-5eed-4365-a8ac-d150deb282d1",
+		"name": "Skyroom Web API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "rooms",
+			"item": [
+				{
+					"name": "get all rooms",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 14add3de-cb39-4308-aab3-846d0b3556a0",
+								"description": "API KEY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.skyroom.online/v2/rooms",
+							"protocol": "https",
+							"host": [
+								"api",
+								"skyroom",
+								"online"
+							],
+							"path": [
+								"v2",
+								"rooms"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get room by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://api.skyroom.online/v2/rooms/41"
+					},
+					"response": []
+				},
+				{
+					"name": "create new room",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"room_name\", \r\n    \"title\": \"room title\",\r\n    \"description\": \"Description of this room\",\r\n    \"timeLimit\": 300, \r\n    \"sessionDuration\": 60, \r\n    \"status\": 1, \r\n    \"opLoginFirst\": true,\r\n    \"showUsers\": true, \r\n    \"disableChat\":false \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://api.skyroom.online/v2/rooms"
+					},
+					"response": []
+				},
+				{
+					"name": "update room",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"new_name\",\r\n    \"title\": \"new title\",\r\n    \"description\": \"new description\",\r\n    \"timeLimit\": 36000,\r\n    \"sessionDuration\": 3600,\r\n    \"status\": 0,\r\n    \"opLoginFirst\": true,\r\n    \"showUsers\":true,\r\n    \"disableChat\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://api.skyroom.online/v2/rooms/127"
+					},
+					"response": []
+				},
+				{
+					"name": "delete rooms",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "https://api.skyroom.online/v2/rooms/44"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "attendees",
+			"item": [
+				{
+					"name": "create sso token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"ID10000\",\r\n    \"channelId\":127,\r\n    \"nickname\":\"تست\",\r\n    \"role\":0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://api.skyroom.online/v2/attendees/token"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "connections",
+			"item": [
+				{
+					"name": "get all connections",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.skyroom.online/v2/connections",
+							"protocol": "https",
+							"host": [
+								"api",
+								"skyroom",
+								"online"
+							],
+							"path": [
+								"v2",
+								"connections"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "2",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "id",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "DESC",
+									"description": "optional",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get connection by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://api.skyroom.online/v2/connections/17"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "sessions",
+			"item": [
+				{
+					"name": "get all session",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.skyroom.online/v2/sessions",
+							"protocol": "https",
+							"host": [
+								"api",
+								"skyroom",
+								"online"
+							],
+							"path": [
+								"v2",
+								"sessions"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "2",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "id",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "DESC",
+									"description": "optional",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get session by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://api.skyroom.online/v2/sessions/17"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "general",
+			"item": [
+				{
+					"name": "info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://api.skyroom.online/v2/info"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "14add3de-cb39-4308-aab3-846d0b3556a0"
+		}
+	},
+	"protocolProfileBehavior": {}
+}
