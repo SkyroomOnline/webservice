@@ -2,7 +2,7 @@
 /**
  * Sample Implementation of the Skyroom Web Service
  *
- * @copyright   Skyroom.online
+ * @copyright  Skyroom.online
  */
 
 require_once 'api/Skyroom.php';
@@ -23,6 +23,10 @@ if (empty($apiUrl)) {
 $api = new Skyroom($apiUrl);
 $action = $_POST['action'];
 switch ($action) {
+    case 'getServices':
+        $params = array();
+        break;
+
     case 'getRooms':
         $params = array();
         break;
