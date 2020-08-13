@@ -455,12 +455,21 @@
   &quot;result&quot;: 2
 }
 </code></pre>
-<h4>دریافت مشخصات یک اتاق</h4>
+<h4>دریافت مشخصات یک اتاق با استفاده از شناسه</h4>
 <h5>درخواست:</h5>
 <pre><code class="lang-json">{
   &quot;action&quot;: &quot;getRoom&quot;,
   &quot;params&quot;: {
     &quot;room_id&quot;: 1
+  }
+}
+</code></pre>
+<h4>دریافت مشخصات یک اتاق با استفاده از نام</h4>
+<h5>درخواست:</h5>
+<pre><code class="lang-json">{
+  &quot;action&quot;: &quot;getRoom&quot;,
+  &quot;params&quot;: {
+    &quot;name&quot;: &quot;meeting&quot;
   }
 }
 </code></pre>
@@ -837,12 +846,21 @@
   ]
 }
 </code></pre>
-<h4>دریافت مشخصات یک کاربر</h4>
+<h4>دریافت مشخصات یک کاربر با استفاده از شناسه</h4>
 <h5>درخواست:</h5>
 <pre><code class="lang-json">{
   &quot;action&quot;: &quot;getUser&quot;,
   &quot;params&quot;: {
     &quot;user_id&quot;: 1
+  }
+}
+</code></pre>
+<h4>دریافت مشخصات یک کاربر با استفاده از نام کاربری</h4>
+<h5>درخواست:</h5>
+<pre><code class="lang-json">{
+  &quot;action&quot;: &quot;getUser&quot;,
+  &quot;params&quot;: {
+    &quot;username&quot;: &quot;parham&quot;
   }
 }
 </code></pre>
