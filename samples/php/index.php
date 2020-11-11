@@ -172,6 +172,18 @@ switch ($action) {
         );
         break;
 
+    case 'createLoginUrl':
+        $params = array(
+            'room_id' => 1,
+            'user_id' => 'sina',
+            'language' => 'en',
+            'nickname' => 'Sina',
+            'access' => 2,
+            'concurrent' => '1',
+            'ttl' => 3600,
+        );
+        break;
+
     default:
         $params = array();
 }

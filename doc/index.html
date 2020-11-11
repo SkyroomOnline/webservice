@@ -1013,7 +1013,8 @@
   &quot;result&quot;: 2
 }
 </code></pre>
-<h4>دریافت آدرس ورود مستقیم به اتاق بدون نیاز به لاگین</h4>
+<h4>دریافت آدرس ورود مستقیم به اتاق بدون نیاز به لاگین (منسوخ شده)</h4>
+<p>بهتر است به جای این تابع از تابع createLoginUrl که ساده‌تر است و کارآمدی بیشتری دارد استفاده شود. با استفاده از این تابع می‌توان برای یک کاربر خاص که پیش‌تر ساخته شده و دسترسی آن به اتاق مورد نظر داده شده است لینک ورود مستقیم ایجاد کرد تا کاربر بدون نیاز به درج نام کاربری و گذرواژه وارد اتاق شود.</p>
 <h5>درخواست:</h5>
 <pre><code class="lang-json">{
   &quot;action&quot;: &quot;getLoginUrl&quot;,
@@ -1025,16 +1026,42 @@
   }
 }
 </code></pre>
-<p><code>ttl</code> یا Time To Live مدت زمان اعتبار لینک به ثانیه می‌باشد که در مثال بالا 300 ثانیه یا 5 دقیقه می‌باشد. پس از این مدت، لینک تولید شده معتبر نیست و در صورت استفاده، کاربر با خطای عدم اعتبار لینک روبرو می‌شود.</p>
+<p><code>ttl</code> یا Time To Live مدت زمان اعتبار لینک به ثانیه است که در مثال بالا این مدت 3600 ثانیه معادل یک ساعت می‌باشد. پس از این مدت، لینک تولید شده معتبر نیست و در صورت استفاده، کاربر با خطای عدم اعتبار لینک روبرو می‌شود.</p>
 <h5>پاسخ:</h5>
 <pre><code class="lang-json">{
   &quot;ok&quot;: true,
-  &quot;result&quot;: &quot;https://www.skyroom.online/ch/faramooz/meeting/t/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MDY2MDgxMzYsInVpZCI6NjM0N30.uFp056uU4JRKk_UxBy7sw0dkS7qQ80JL05N5_u62zUs&quot;
+  &quot;result&quot;: &quot;https://www.skyroom.online/ch/faramooz/meeting/t/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MDY2MDgxMzYsInVpZCI6NjM0N30.uFp056uU4JRKk_UxBy7sw0dkS7qQ80JL05N5_u62zUs/l/fa&quot;
+}
+</code></pre>
+<p><br></p>
+<h4>دریافت آدرس ورود مستقیم به اتاق بدون نیاز به لاگین و ساخت کاربر (جدید)</h4>
+<p>مزیت این تابع نسبت به تابع <code>getLoginUrl</code> این است که نیازی به ساخت کاربر و اعطای دسترسی به اتاق وجود ندارد. کافی است شناسه اتاق را به همراه مشخصات مورد نظر ارسال کنید تا لینک ورود مستقیم برای شما ایجاد شود.</p>
+<h5>درخواست:</h5>
+<pre><code class="lang-json">{
+  &quot;action&quot;: &quot;createLoginUrl&quot;,
+  &quot;params&quot;: {
+    &quot;room_id&quot;: 1,
+    &quot;user_id&quot;: &quot;sina&quot;,
+    &quot;nickname&quot;: &quot;Sina&quot;,
+    &quot;access&quot;: 3,
+    &quot;concurrent&quot;: 1,
+    &quot;language&quot;: &quot;en&quot;,
+    &quot;ttl&quot;: 3600
+  }
+}
+</code></pre>
+<p><code>concurrent</code> یا همزمانی بیانگر تعداد کاربری است که می‌توانند در لحظه و به صورت همزمان با این لینک وارد اتاق شوند. چنانچه پارامتر <code>user_id</code> خالی باشد این پارامتر بی‌تاثیر خواهد بود. مقدار پیش‌فرض برای <code>concurrent</code> عدد 1 می‌باشد.</p>
+<p>پارامتر <code>user_id</code> اختیاری است و می‌تواند شامل عدد یا رشته (بدون فاصله) باشد و هدف از آن جلوگیری از ورود همزمان چند کاربر با استفاده از لینک تولید شده می‌باشد. به بیان دیگر اگر این پارامتر فاقد مقدار باشد، پارامتر <code>concurrent</code> هیچ تاثیری ندارد و لینک تولید شده عمومی خواهد بود و با استفاده از این لینک به تعداد نامحدود کاربر می‌توانند به صورت همزمان وارد اتاق شوند.</p>
+<p><code>ttl</code> یا Time To Live مدت زمان اعتبار لینک به ثانیه است. پس از این مدت، لینک تولید شده معتبر نیست و در صورت استفاده، کاربر با خطای عدم اعتبار لینک روبرو می‌شود. مقدار پیش‌فرض برای این پارامتر 3600 ثانیه معادل یک ساعت می‌باشد.</p>
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: &quot;https://www.skyroom.online/ch/faramooz/meeting/t/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiYXBpX2xvZ2luIiwiZXhwIjoxNjA1MDg2NTY2LCJyb29tX2lkIjoxLCJ1aWQiOiJAYXBpXC9ta2giLCJuaWNrbmFtZSI6Ik1vaHNlbiIsInJvbGUiOjMsImNvbmN1cnJlbnQiOjUsImdlbmRlciI6MH0.hGJyJvnDFSDMEXCt_q1zUru8INLcyH3UGH7kh4D2SAc/l/en&quot;
 }
 </code></pre>
 <p><br></p>
 <h2>کدهای مفید</h2>
-<h4>وضعیت اتاق:</h4>
+<h4 id="-status-">وضعیت سرویس (status):</h4>
 <table>
 <thead>
 <tr>
@@ -1053,7 +1080,7 @@
 </tr>
 </tbody>
 </table>
-<h4>وضعیت کاربر:</h4>
+<h4 id="-status-">وضعیت اتاق (status):</h4>
 <table>
 <thead>
 <tr>
@@ -1072,7 +1099,26 @@
 </tr>
 </tbody>
 </table>
-<h4>جنسیت کاربر:</h4>
+<h4 id="-status-">وضعیت کاربر (status):</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">کد</th>
+<th style="text-align:left">شرح</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0</td>
+<td style="text-align:left">غیرفعال</td>
+</tr>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">فعال</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-gender-">جنسیت کاربر (gender):</h4>
 <table>
 <thead>
 <tr>
@@ -1095,7 +1141,7 @@
 </tr>
 </tbody>
 </table>
-<h4>دسترسی به اتاق:</h4>
+<h4 id="-access-">دسترسی به اتاق (access):</h4>
 <table>
 <thead>
 <tr>

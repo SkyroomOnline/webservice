@@ -7,7 +7,7 @@
 
 class Skyroom
 {
-    const VERSION = '1.3.0';
+    const VERSION = '1.4.0';
 
     const ROOM_STATUS_DISABLED   = 0;
     const ROOM_STATUS_ENABLED    = 1;
