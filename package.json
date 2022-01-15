@@ -23,7 +23,7 @@
     "gulp-markdown": "^1.2.0",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^0.6.1",
-    "marked": "^0.6.3",
+    "marked": "^4.0.10",
     "pump": "^1.0.3"
   }
 }
