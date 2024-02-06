@@ -179,7 +179,7 @@ switch ($action) {
             'language' => 'en',
             'nickname' => 'Sina',
             'access' => 2,
-            'concurrent' => '1',
+            'concurrent' => 1,
             'ttl' => 3600,
         );
         break;
