@@ -531,6 +531,7 @@ HTTP/1.1 200 OK
 |`createUser`|ایجاد کاربر جدید|شناسه کاربر ایجاد شده|number
 |`updateUser`|بروزرسانی کاربر|1|number
 |`deleteUser`|حذف کاربر|1|number
+|`deleteUsers`|حذف چند کاربر|1|number
 |`getUserRooms`|دریافت لیست اتاق‌های کاربر|لیست اتاق‌ها|[]
 |`addUserRooms`|افزودن به اتاق‌های کاربر|1|number
 |`removeUserRooms`|حذف از اتاق‌های کاربر|1|number
@@ -670,6 +671,30 @@ HTTP/1.1 200 OK
 {
   "ok": true,
   "result": 1
+}
+```
+
+#### حذف چند کاربر
+##### درخواست:
+```json
+{
+  "action": "deleteUsers",
+  "params": {
+    "users": [
+      3, 4, 5
+    ]
+  }
+}
+```
+
+##### پاسخ:
+```json
+{
+  "ok": true,
+  "result": {
+    "success": 2,
+    "failure": 1
+  }
 }
 ```
 

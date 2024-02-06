@@ -809,6 +809,12 @@
 <td>number</td>
 </tr>
 <tr>
+<td style="text-align:left"><code>deleteUsers</code></td>
+<td style="text-align:right">حذف چند کاربر</td>
+<td style="text-align:right">1</td>
+<td>number</td>
+</tr>
+<tr>
 <td style="text-align:left"><code>getUserRooms</code></td>
 <td style="text-align:right">دریافت لیست اتاق‌های کاربر</td>
 <td style="text-align:right">لیست اتاق‌ها</td>
@@ -948,6 +954,26 @@
 <pre><code class="lang-json">{
   &quot;ok&quot;: true,
   &quot;result&quot;: 1
+}
+</code></pre>
+<h4>حذف چند کاربر</h4>
+<h5>درخواست:</h5>
+<pre><code class="lang-json">{
+  &quot;action&quot;: &quot;deleteUsers&quot;,
+  &quot;params&quot;: {
+    &quot;users&quot;: [
+      3, 4, 5
+    ]
+  }
+}
+</code></pre>
+<h5>پاسخ:</h5>
+<pre><code class="lang-json">{
+  &quot;ok&quot;: true,
+  &quot;result&quot;: {
+    &quot;success&quot;: 2,
+    &quot;failure&quot;: 1
+  }
 }
 </code></pre>
 <h4>دریافت لیست اتاق‌های یک کاربر</h4>
